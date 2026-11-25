@@ -75,7 +75,7 @@ El mapa muestra **qué mercado inicia**, cuáles reciben el efecto y cómo se pr
 
 ### Opción A — Usar la aplicación en línea (GitHub Pages)
 
-Accedé a **[Macro Studio — aplicación interactiva](https://juaniflls.github.io/macro-studio/)**. Este enlace abre el simulador en el navegador; a diferencia del archivo dentro del repositorio, permite utilizar sus controles directamente. Si GitHub Pages aún no está desplegado, consultá la sección de publicación o utilizá la opción sin conexión.
+Accedé a **[Macro Studio — aplicación interactiva](https://juaniflls.github.io/macro-studio/)**. Este enlace abre el simulador en el navegador; a diferencia del archivo dentro del repositorio, permite utilizar sus controles directamente. GitHub Pages requiere activarse una sola vez en **Settings → Pages → Source → GitHub Actions**. Después podés iniciar [el flujo de publicación](https://github.com/juaniflls/macro-studio/actions/workflows/pages.yml). Hasta que se complete ese despliegue, utilizá la opción sin conexión.
 
 ### Opción B — Abrir sin conexión
 
@@ -102,7 +102,7 @@ Abrí [`Macro_Studio_5_0_Final_Notebook_Generador.ipynb`](./Macro_Studio_5_0_Fin
 
 El repositorio incluye un flujo de publicación automática en [`.github/workflows/pages.yml`](./.github/workflows/pages.yml), que despliega `index.html` en [**juaniflls.github.io/macro-studio/**](https://juaniflls.github.io/macro-studio/). El archivo `index.html` contiene la misma aplicación autónoma; el enlace al archivo en GitHub muestra el código, mientras que GitHub Pages ejecuta la interfaz.
 
-> Si la dirección aún no abre el simulador, revisá [Actions](https://github.com/juaniflls/macro-studio/actions) y **Settings → Pages**. En caso de necesitar activación manual, elegí **GitHub Actions** como fuente. El enlace HTML descargable permanece disponible para uso sin conexión.
+> Para la primera publicación debés seleccionar **GitHub Actions** en **Settings → Pages → Build and deployment → Source** y luego ejecutar manualmente [**Publicar aplicación en GitHub Pages**](https://github.com/juaniflls/macro-studio/actions/workflows/pages.yml). Este paso de activación es necesario por permisos de GitHub. El enlace HTML descargable permanece disponible para uso sin conexión. El enlace HTML descargable permanece disponible para uso sin conexión.
 
 ## Cómo funciona
 
