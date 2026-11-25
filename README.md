@@ -12,9 +12,10 @@
   <img alt="HTML autónomo" src="https://img.shields.io/badge/HTML5-Aut%C3%B3nomo-E34F26?style=flat-square&logo=html5&logoColor=white" />
   <img alt="Uso sin conexión" src="https://img.shields.io/badge/Sin%20conexi%C3%B3n-Sin%20servidor-167AB5?style=flat-square" />
   <img alt="Versión" src="https://img.shields.io/badge/Versi%C3%B3n-5.0-C93E85?style=flat-square" />
+  <a href="./LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/Licencia-MIT-167AB5?style=flat-square" /></a>
 </p>
 
-**[Explorar la aplicación](./index.html) · [Ejecutar el notebook](./Macro_Studio_5_0_Final_Notebook_Generador.ipynb) · [Entender el modelo](./docs/METODOLOGIA.md) · [Auditoría y pruebas](./docs/VALIDACION.md)**
+**[Descargar la aplicación](./index.html) · [Ejecutar el notebook](./Macro_Studio_5_0_Final_Notebook_Generador.ipynb) · [Entender el modelo](./docs/METODOLOGIA.md) · [Auditoría y pruebas](./docs/VALIDACION.md)**
 
 <sub>Desarrollado por <strong>Juan Ignacio Garbanzo Fallas</strong> · Proyecto académico de economía convertido en una herramienta reutilizable.</sub>
 
@@ -134,7 +135,11 @@ macro-studio/
 │   ├── test_app.py
 │   └── resultados_qa_base.json
 ├── docs/                                       # Metodología, arquitectura y alcance
-├── .github/workflows/ci.yml
+├── .github/workflows/ci.yml                # Pruebas automatizadas en GitHub Actions
+├── .github/workflows/lanzamiento-v5.yml     # Publicación inicial v5.0.0
+├── LICENSE                                     # Licencia MIT
+├── .gitattributes                              # Estadísticas de lenguajes GitHub Linguist
+├── .gitignore
 ├── CITATION.cff
 ├── CHANGELOG.md
 └── README.md
@@ -158,7 +163,7 @@ Este es un proyecto independiente de aprendizaje y desarrollo. **No es una publi
 
 Si encontrás un comportamiento inesperado, describí el shock, el supuesto, la ruta esperada y el resultado obtenido siguiendo [CONTRIBUTING.md](./CONTRIBUTING.md). Si utilizás este trabajo en un proyecto académico, consultá [`CITATION.cff`](./CITATION.cff).
 
-**Licencia:** el proyecto todavía no incorpora una licencia de reutilización. La autoría y los permisos de uso deberán definirse explícitamente antes de autorizar redistribución o modificaciones.
+**Licencia:** [MIT](./LICENSE) © 2026 Juan Ignacio Garbanzo Fallas. Se permite usar, estudiar, modificar y redistribuir el software conservando el aviso de copyright y la licencia. Las marcas y contenidos de terceros mantienen sus respectivos derechos.
 
 ---
 
