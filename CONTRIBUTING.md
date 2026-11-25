@@ -18,4 +18,4 @@ Separá los problemas de **lógica económica** de los de **presentación visual
 
 Las modificaciones deberían mantenerse sincronizadas entre notebook, aplicación estática y fuentes de inspección.
 
-**Licencia pendiente:** por ahora no existe una licencia abierta para contribuciones; antes de enviar código, contactá al autor para confirmar las condiciones de uso.
+**Licencia MIT:** las contribuciones incorporadas al repositorio se distribuirán bajo los términos de [LICENSE](./LICENSE). Enviá únicamente material sobre el que tengas derechos y conservá la atribución de terceros.
