@@ -1,0 +1,14 @@
+# Archivos temporales y del entorno local
+.DS_Store
+._*
+__MACOSX/
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+# Resultados reproducibles de QA y evidencias locales
+tests/out/
+# Archivos temporales
+*.tmp
