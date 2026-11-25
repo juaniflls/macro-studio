@@ -35,7 +35,7 @@ El código se distribuye bajo licencia MIT. El lanzamiento inicial se etiqueta `
 
 ## Habilitar el sitio
 
-Abrí **Settings → Pages → Build and deployment**, elegí *Deploy from a branch*, rama `main`, carpeta `/(root)`, y guardá. El sitio quedará en `https://juaniflls.github.io/macro-studio/` una vez que GitHub complete el despliegue.
+Abrí **Settings → Pages → Build and deployment** y elegí **GitHub Actions** como fuente de publicación. GitHub requiere activar Pages una sola vez desde la configuración del repositorio; una ejecución automática no puede habilitarlo mediante el token limitado de GitHub Actions. Después, en la pestaña **Actions**, abrí **Publicar aplicación en GitHub Pages**, elegí **Run workflow** y ejecutá la rama `main`. El sitio se publicará en `https://juaniflls.github.io/macro-studio/`. El flujo también se reactivará cuando cambie `index.html`.
 
 ## Configuración opcional de la página principal
 
