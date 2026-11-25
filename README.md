@@ -15,7 +15,7 @@
   <a href="./LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/Licencia-MIT-167AB5?style=flat-square" /></a>
 </p>
 
-**[Descargar la aplicación](./index.html) · [Ejecutar el notebook](./Macro_Studio_5_0_Final_Notebook_Generador.ipynb) · [Entender el modelo](./docs/METODOLOGIA.md) · [Auditoría y pruebas](./docs/VALIDACION.md)**
+**[Abrir Macro Studio en línea](https://juaniflls.github.io/macro-studio/) · [Descargar aplicación HTML](./index.html) · [Ejecutar el notebook](./Macro_Studio_5_0_Final_Notebook_Generador.ipynb) · [Entender el modelo](./docs/METODOLOGIA.md) · [Auditoría y pruebas](./docs/VALIDACION.md)**
 
 <sub>Desarrollado por <strong>Juan Ignacio Garbanzo Fallas</strong> · Proyecto académico de economía convertido en una herramienta reutilizable.</sub>
 
@@ -73,7 +73,11 @@ El mapa muestra **qué mercado inicia**, cuáles reciben el efecto y cómo se pr
 
 ## Empezar en menos de un minuto
 
-### Opción A — Abrir directamente
+### Opción A — Usar la aplicación en línea (GitHub Pages)
+
+Accedé a **[Macro Studio — aplicación interactiva](https://juaniflls.github.io/macro-studio/)**. Este enlace abre el simulador en el navegador; a diferencia del archivo dentro del repositorio, permite utilizar sus controles directamente. Si GitHub Pages aún no está desplegado, consultá la sección de publicación o utilizá la opción sin conexión.
+
+### Opción B — Abrir sin conexión
 
 1. Descargá **[`index.html`](./index.html)** (desde GitHub usá **Download raw file**) y abrilo con tu navegador.
 2. Elegí un caso o creá uno nuevo.
@@ -83,7 +87,7 @@ El mapa muestra **qué mercado inicia**, cuáles reciben el efecto y cómo se pr
 
 > No requiere instalación, cuenta, servidor, conexión a internet ni datos externos para ejecutar la simulación. Las imágenes de este README y las insignias solo se cargan al visualizar GitHub.
 
-### Opción B — Reconstruir desde Jupyter
+### Opción C — Reconstruir desde Jupyter
 
 El notebook es el **generador autocontenido**: contiene las reglas económicas, estilos, referencias y aplicación. Podés revisarlo, modificarlo y generar de nuevo el HTML.
 
@@ -94,11 +98,11 @@ jupyter lab
 
 Abrí [`Macro_Studio_5_0_Final_Notebook_Generador.ipynb`](./Macro_Studio_5_0_Final_Notebook_Generador.ipynb) y ejecutá todas las celdas. Obtendrás `Macro_Studio_5_0.html` en el directorio de ejecución.
 
-### Opción C — Publicar la aplicación con GitHub Pages
+### Publicación web mediante GitHub Pages
 
-Este repositorio incluye `index.html` en la raíz y está listo para alojarse como sitio estático. En **Settings → Pages**, seleccioná **Deploy from a branch**, rama **main** y carpeta **/(root)**. Tras activar Pages, el sitio podrá abrirse desde `https://juaniflls.github.io/macro-studio/`.
+El repositorio incluye un flujo de publicación automática en [`.github/workflows/pages.yml`](./.github/workflows/pages.yml), que despliega `index.html` en [**juaniflls.github.io/macro-studio/**](https://juaniflls.github.io/macro-studio/). El archivo `index.html` contiene la misma aplicación autónoma; el enlace al archivo en GitHub muestra el código, mientras que GitHub Pages ejecuta la interfaz.
 
-> La dirección de Pages solo estará operativa después de crear el repositorio, subir sus archivos y habilitar el despliegue.
+> Si la dirección aún no abre el simulador, revisá [Actions](https://github.com/juaniflls/macro-studio/actions) y **Settings → Pages**. En caso de necesitar activación manual, elegí **GitHub Actions** como fuente. El enlace HTML descargable permanece disponible para uso sin conexión.
 
 ## Cómo funciona
 
