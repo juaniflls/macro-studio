@@ -53,6 +53,10 @@ jobs:
           done
           echo "No aparece el paquete github-pages en la API de GitHub."
           exit 1
+      - name: Esperar sincronización entre APIs de GitHub
+        run: |
+          # La API de Actions puede registrar un artefacto antes de que Pages lo detecte.
+          sleep 20
       - name: Desplegar Macro Studio
         id: deployment
         uses: actions/deploy-pages@v4
