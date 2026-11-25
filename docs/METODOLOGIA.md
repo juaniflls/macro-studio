@@ -47,3 +47,20 @@ Después, Y afecta DL, Md y D$; la retroalimentación puede producir canales de 
 ## Contexto
 
 El proyecto sistematiza la metodología de ejercicios trabajada con Ronney Zamora Leiva en Macroeconomía II (Universidad Fidélitas, 2026). Se conserva la terminología docente para mantener trazabilidad. No se redistribuyen las presentaciones de clase ni transcripciones originales en el repositorio público.
+
+
+## Formulario de ecuaciones y componentes
+
+**Bienes y servicios:** Y = C + I + G + X − M; el equilibrio implica OA = DA. Las funciones de consumo, ingreso disponible, inversión, gasto público y sector externo se consultan por separado, porque un componente puede depender de otras variables. La función de consumo se expresa como C = C₀ + PmgC × Yd; los determinantes de Yd se muestran cualitativamente como en las presentaciones, sin inventar coeficientes.
+
+**Mercado laboral:** DL responde a producción y tecnología; OL a condiciones de oferta como migración y capacitación. El salario de equilibrio modifica el ingreso disponible y puede generar retornos posteriores sobre C.
+
+**Mercado monetario:** Ms responde a instrumentos del BCCR y Md a sus determinantes cualitativos, incluidos Y y la deuda interna. La tasa de interés ajusta el equilibrio; una alteración de Md no desplaza automáticamente LM.
+
+**Mercado cambiario:** O$ se relaciona con los ingresos de divisas y D$ con sus salidas. El tipo de cambio afecta exportaciones e importaciones, conforme a los supuestos del caso.
+
+## Diagnóstico de política económica
+
+El diagnóstico opcional presenta cuatro situaciones didácticas: identifica el punto inicial, la variable de interés (Y o i), el instrumento fiscal o monetario y la evaluación posterior. Las combinaciones de excesos de los mercados de bienes, dinero y divisas no quedan agotadas por cuatro ejemplos. El desplazamiento de IS debe tener una causa distinta de un movimiento de i por sí solo; LM se desplaza con Ms; BP requiere revisar el canal externo.
+
+La geometría es ilustrativa. La tendencia concreta mostrada en E1 → E2 debe distinguirse de la conclusión cualitativa que puede extraerse sin magnitudes. Una política no asegura el equilibrio simultáneo IS–LM–BP.

@@ -2,183 +2,150 @@
 
 # MACRO STUDIO
 
-### De un cambio económico a una explicación causal, paso a paso.
+### De una decisión económica a sus efectos, mercado por mercado.
 
-**Aplicación interactiva de macroeconomía en español para estudiar la transmisión entre cuatro mercados, los efectos de primer y segundo orden y el modelo IS–LM–BP.**
+**Simulador interactivo de macroeconomía en español:** cuatro mercados, secuencias de primer y segundo orden, mapa causal y modelo IS–LM–BP.
 
 <p>
-  <img alt="Cuaderno Jupyter" src="https://img.shields.io/badge/Python-Jupyter-3776AB?style=flat-square&logo=jupyter&logoColor=white" />
-  <img alt="JavaScript nativo" src="https://img.shields.io/badge/JavaScript-Nativo-F7DF1E?style=flat-square&logo=javascript&logoColor=111" />
-  <img alt="HTML autónomo" src="https://img.shields.io/badge/HTML5-Aut%C3%B3nomo-E34F26?style=flat-square&logo=html5&logoColor=white" />
-  <img alt="Uso sin conexión" src="https://img.shields.io/badge/Sin%20conexi%C3%B3n-Sin%20servidor-167AB5?style=flat-square" />
-  <img alt="Versión" src="https://img.shields.io/badge/Versi%C3%B3n-5.1-C93E85?style=flat-square" />
-  <a href="./LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/Licencia-MIT-167AB5?style=flat-square" /></a>
+  <img alt="Versión 5.3" src="https://img.shields.io/badge/Versi%C3%B3n-5.3-C93E85?style=flat-square"/>
+  <img alt="Idioma español" src="https://img.shields.io/badge/Idioma-Espa%C3%B1ol-167AB5?style=flat-square"/>
+  <img alt="Notebook Jupyter" src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=flat-square&logo=jupyter&logoColor=white"/>
+  <img alt="HTML autónomo" src="https://img.shields.io/badge/HTML-Aut%C3%B3nomo-E34F26?style=flat-square&logo=html5&logoColor=white"/>
+  <a href="./LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/Licencia-MIT-167AB5?style=flat-square"/></a>
 </p>
 
-**[Abrir Macro Studio en línea](https://juaniflls.github.io/macro-studio/) · [Descargar aplicación HTML](./index.html) · [Ejecutar el notebook](./Macro_Studio_5_1_Notebook_Generador.ipynb) · [Entender el modelo](./docs/METODOLOGIA.md) · [Auditoría y pruebas](./docs/VALIDACION.md)**
+### [Abrir aplicación](https://juaniflls.github.io/macro-studio/) · [Notebook generador](./Macro_Studio_5_3_Notebook_Generador.ipynb) · [Metodología](./docs/METODOLOGIA.md) · [Validación](./docs/VALIDACION.md)
 
-<sub>Desarrollado por <strong>Juan Ignacio Garbanzo Fallas</strong> · Proyecto académico de economía convertido en una herramienta reutilizable.</sub>
+<sub>Autor: <strong>Juan Ignacio Garbanzo Fallas</strong> · Proyecto académico en Economía, Universidad Fidélitas.</sub>
 
 </div>
 
 ---
 
-## Novedades de la revisión 5.1
+## El laboratorio
 
-- **Formulario económico desplegable:** funciones de C, I, G, X, M y relaciones fundamentales de los cuatro mercados, basadas en las presentaciones del curso.
-- **Trazabilidad causal:** las flechas conectan una secuencia anterior con una posterior; el retorno cambiario `O$2 → TC → X−M → DA3` no atribuye a DL3/Md3 una causa simultánea.
-- **Política fiscal diferenciada de política monetaria:** G se modifica en bienes y servicios; la liquidez del BCCR se modifica mediante Ms.
-- **Diagnóstico opcional IS–LM–BP:** identificación ilustrativa de excesos y selección de medidas; no constituye una predicción ni una política que garantice equilibrio general.
-- **Notebooks y publicación:** al ejecutar el generador 5.1 se produce `index.html`, el archivo de entrada de GitHub Pages.
+Macro Studio transforma una variable económica y su dirección de cambio en **gráficas, consecuencias explicadas y una ruta causal navegable**. El objetivo es estudiar cómo se transmite un cambio entre los mercados, no solamente observar cuatro gráficos aislados.
 
-## Una pregunta. Cuatro mercados. Una ruta económica explicable.
+<p align="center"><img src="assets/screenshots/actuales/01-escenario-y-diagnostico.png" alt="Aplicación Macro Studio: configuración de escenarios y diagnóstico" width="100%"/></p>
 
-**Macro Studio**, desarrollado en español, transforma un escenario económico —por ejemplo, *¿qué sucede si disminuye la inversión extranjera directa?*— en una secuencia de relaciones causales, curvas y explicaciones. El usuario determina las hipótesis y puede elegir cuál mecanismo prevalece cuando existen efectos contrapuestos. El software **no estima elasticidades ni sustituye la interpretación económica**.
+### Funcionalidades
 
-<p align="center"><img src="assets/screenshots/01-espacio-de-trabajo.png" width="100%" alt="Macro Studio: editor de escenarios, colecciones, modelo económico y mapa causal interactivo" /></p>
+- **Cuatro mercados:** bienes y servicios (OA/DA), laboral (OL/DL), monetario (Ms/Md) y cambiario (O$/D$).
+- **Secuencias explicables:** efectos de primer y segundo orden, equilibrios E1/E2/E3, antecedentes y flechas interactivas.
+- **Predominio económico configurable:** selección de un canal cuando llegan efectos contrapuestos de secuencias anteriores; sin crear vínculos artificiales entre efectos simultáneos.
+- **Diagnóstico de política económica:** identificación del desequilibrio, objetivo, instrumento fiscal o monetario y evaluación del resultado.
+- **Interpretación IS–LM–BP:** desplazamientos de curvas, producción, tasa de interés y condición cambiaria.
+- **Formulario económico:** componentes de DA y funciones anidadas de consumo, ingreso disponible, inversión, gasto público y sector externo, además de los mercados restantes.
+- **Espacio de trabajo editable:** colecciones, casos, importación y exportación JSON, exposición y exportación HTML.
 
-## Qué podés hacer
+## Galería actualizada
 
-| Capacidad | Qué ofrece |
-|:--|:--|
-| **Cuatro mercados** | Bienes y servicios, laboral, monetario y cambiario, representados con curvas, equilibrios y variables resultado. |
-| **Primer y segundo orden** | Una secuencia causal numerada; el segundo orden se distingue visualmente del primero. |
-| **Mapa causal interactivo** | Nodos y flechas que muestran dependencias; permite seleccionar un efecto para explorar sus causas. |
-| **IS–LM–BP** | Representación conjunta cualitativa de las curvas y sus desplazamientos bajo las reglas docentes implementadas. |
-| **Rutas alternativas** | Permite explorar un inicio cambiario o un doble inicio para el caso IED, según el supuesto adoptado. |
-| **Efectos contrapuestos** | Selección explícita de predominio de consumo, inversión o exportaciones netas, cuando el escenario lo requiere. |
-| **Narrativa económica** | Explicaciones por secuencia que conectan la variable previa, el signo del efecto y la curva afectada. |
-| **Colecciones editables** | Crear, organizar, renombrar, duplicar y eliminar casos y colecciones. Banco de ejercicios para reutilizar escenarios. |
-| **Modo exposición** | Vista preparada para presentar las gráficas y la ruta. |
-| **Portabilidad** | Funciona como archivo HTML sin servidor, con guardado local y exportación/importación JSON. |
+Las imágenes se producen **automáticamente desde la aplicación** para mantener el README sincronizado con el notebook. El azul identifica los efectos de primer orden y el rosado los de segundo orden.
 
-## Así se ve
+### Diagnóstico y política económica
 
-### 01. De la variable explicativa a la ruta causal
+<p align="center"><img src="assets/screenshots/actuales/02-politica-economica.png" alt="Diagnóstico económico: ubicación, objetivo, intervención y evaluación" width="100%"/></p>
 
-<p align="center"><img src="assets/screenshots/02-mapa-causal.png" width="100%" alt="Diagrama causal: mercados en filas, secuencias en columnas y flechas azules y rosadas" /></p>
+El diagnóstico permite analizar cuatro situaciones ilustrativas sin vincularlas a grupos o ejercicios de una fecha específica. Seleccionar una intervención no garantiza por sí solo el equilibrio simultáneo de los mercados.
 
-El mapa muestra **qué mercado inicia**, cuáles reciben el efecto y cómo se produce la retroalimentación. Azul identifica el primer orden y rosado el segundo; las flechas no son independientes de las gráficas, proceden del mismo análisis.
+### Diagrama causal y secuencias
+
+<p align="center"><img src="assets/screenshots/actuales/03-mapa-causal.png" alt="Diagrama de cuatro mercados con flechas causales y secuencias numeradas" width="100%"/></p>
+
+Las conexiones representan antecedentes económicos. Dos efectos con el mismo número pueden ser simultáneos: no deben interpretarse como si uno necesariamente generara al otro.
+
+### Gráficas de los cuatro mercados
 
 <table>
-  <tr>
-    <td width="50%"><img src="assets/screenshots/03-bienes-laboral.png" alt="Gráficos de bienes y servicios y mercado laboral" width="100%" /><br/><sub><b>02 · Bienes y servicios + laboral</b><br/>Curvas, equilibrios y numeración.</sub></td>
-    <td width="50%"><img src="assets/screenshots/04-monetario-cambiario.png" alt="Gráficos de mercado monetario y cambiario" width="100%" /><br/><sub><b>03 · Monetario + cambiario</b><br/>Interés, dinero, divisas y tipo de cambio.</sub></td>
-  </tr>
-  <tr>
-    <td width="50%"><img src="assets/screenshots/05-explicaciones.png" alt="Explicaciones ordenadas de primer y segundo orden" width="100%" /><br/><sub><b>04 · Explicaciones trazables</b><br/>Un relato causal debajo de cada gráfica.</sub></td>
-    <td width="50%"><img src="assets/screenshots/06-modelo-is-lm-bp.png" alt="Modelo conjunto IS LM BP" width="100%" /><br/><sub><b>05 · IS–LM–BP</b><br/>Interpretación de equilibrio conjunto.</sub></td>
-  </tr>
+<tr>
+<td width="50%" valign="top"><img src="assets/screenshots/actuales/04-bienes-y-laboral.png" width="100%" alt="Bienes y servicios y mercado laboral"/><br/><sub><strong>Bienes y servicios · Laboral</strong><br/>Producción, empleo y salarios.</sub></td>
+<td width="50%" valign="top"><img src="assets/screenshots/actuales/06-monetario-y-cambiario.png" width="100%" alt="Mercado monetario y mercado cambiario"/><br/><sub><strong>Monetario · Cambiario</strong><br/>Interés, dinero, divisas y tipo de cambio.</sub></td>
+</tr>
 </table>
 
-<details>
-<summary><b>Ver el banco de ejercicios</b></summary>
+### Explicaciones y fundamentos económicos
 
-<br/>
-<img src="assets/screenshots/07-banco-de-ejercicios.png" width="100%" alt="Banco de ejercicios documentados de Macro Studio" />
+<p align="center"><img src="assets/screenshots/actuales/05-explicaciones-causales.png" width="100%" alt="Explicaciones de cuatro párrafos y fundamentos económicos desplegables"/></p>
 
-</details>
+Cada efecto distingue desplazamiento, desequilibrio, ajuste y nuevo equilibrio. Las fórmulas se consultan de manera desplegable para no interrumpir la explicación.
 
-## Empezar en menos de un minuto
+### Modelo conjunto IS–LM–BP
 
-### Opción A — Usar la aplicación en línea (GitHub Pages)
+<table>
+<tr>
+<td width="58%" valign="top"><img src="assets/screenshots/actuales/07-modelo-is-lm-bp.png" width="100%" alt="Modelo IS LM BP y sus curvas"/></td>
+<td width="42%" valign="top"><img src="assets/screenshots/actuales/08-interpretacion-is-lm-bp.png" width="100%" alt="Interpretación de IS LM BP"/></td>
+</tr>
+</table>
 
-Accedé a **[Macro Studio — aplicación interactiva](https://juaniflls.github.io/macro-studio/)**. Este enlace abre el simulador en el navegador; a diferencia del archivo dentro del repositorio, permite utilizar sus controles directamente. GitHub Pages requiere activarse una sola vez en **Settings → Pages → Source → GitHub Actions**. Después podés iniciar [el flujo de publicación](https://github.com/juaniflls/macro-studio/actions/workflows/pages.yml). Hasta que se complete ese despliegue, utilizá la opción sin conexión.
+La interpretación distingue el **resultado dibujado** y las conclusiones **sin magnitudes calibradas**. Si IS y LM se desplazan simultáneamente, la variación final de la tasa de interés puede requerir información adicional. BP se analiza como condición externa, no como un equilibrio automáticamente garantizado.
 
-### Opción B — Abrir sin conexión
+## Marco económico
 
-1. Descargá **[`index.html`](./index.html)** (desde GitHub usá **Download raw file**) y abrilo con tu navegador.
-2. Elegí un caso o creá uno nuevo.
-3. Definí la variable explicativa, su dirección y, cuando corresponda, la ruta o el mecanismo predominante.
-4. Explorá el mapa, los cuatro mercados y la interpretación IS–LM–BP.
-5. Guardá una copia con **Guardar JSON** para trasladar tus casos a otro navegador o computadora.
+La identidad de demanda agregada es:
 
-> No requiere instalación, cuenta, servidor, conexión a internet ni datos externos para ejecutar la simulación. Las imágenes de este README y las insignias solo se cargan al visualizar GitHub.
+**Y = C + I + G + X − M**
 
-### Opción C — Reconstruir desde Jupyter
+El equilibrio del mercado de bienes y servicios se expresa como **OA = DA**; fuera del equilibrio pueden existir excesos de oferta o demanda.
 
-El notebook es el **generador autocontenido**: contiene las reglas económicas, estilos, referencias y aplicación. Podés revisarlo, modificarlo y generar de nuevo el HTML.
+El consumo se descompone en **C = C₀ + PmgC × Yd**, y el ingreso disponible se relaciona con salarios, impuestos, transferencias y otros determinantes considerados en las presentaciones. El formulario también muestra los componentes y condicionantes de inversión, gasto público, exportaciones e importaciones.
 
-```bash
+| Intervención | Mercado inicial | Mecanismo |
+|---|---|---|
+| Política fiscal: modificar G | Bienes y servicios | G modifica directamente DA |
+| Política monetaria: modificar Ms | Monetario | Instrumentos del BCCR modifican Ms y presionan i |
+
+Un cambio de i por sí solo no desplaza IS: la variación inducida de I representa un movimiento a lo largo de esa curva. LM cambia por Ms, no simplemente por los movimientos de Md.
+
+## Utilizar Macro Studio
+
+**[Abrir en el navegador](https://juaniflls.github.io/macro-studio/)** para seleccionar o crear casos, consultar gráficas y guardar una copia JSON. La aplicación puede ejecutarse también **sin conexión**, descargando el archivo [index.html](./index.html) con la opción de archivo sin procesar de GitHub.
+
+### Generación reproducible
+
+El archivo principal es **[Macro_Studio_5_3_Notebook_Generador.ipynb](./Macro_Studio_5_3_Notebook_Generador.ipynb)**. Incluye reglas, referencias, estilos e interfaz. Su ejecución completa produce exactamente **index.html**, el archivo usado por GitHub Pages.
+
+~~~bash
 python -m pip install jupyterlab
 jupyter lab
-```
+~~~
 
-Abrí [`Macro_Studio_5_1_Notebook_Generador.ipynb`](./Macro_Studio_5_0_Final_Notebook_Generador.ipynb) y ejecutá todas las celdas. Obtendrás `Macro_Studio_5_0.html` en el directorio de ejecución.
+Al modificar el notebook en la rama principal, GitHub Actions regenera la aplicación, ejecuta las pruebas, actualiza la galería y publica la versión web.
 
-### Publicación web mediante GitHub Pages
+## Estructura
 
-El repositorio incluye un flujo de publicación automática en [`.github/workflows/pages.yml`](./.github/workflows/pages.yml), que despliega `index.html` en [**juaniflls.github.io/macro-studio/**](https://juaniflls.github.io/macro-studio/). El archivo `index.html` contiene la misma aplicación autónoma; el enlace al archivo en GitHub muestra el código, mientras que GitHub Pages ejecuta la interfaz.
-
-> Para la primera publicación debés seleccionar **GitHub Actions** en **Settings → Pages → Build and deployment → Source** y luego ejecutar manualmente [**Publicar aplicación en GitHub Pages**](https://github.com/juaniflls/macro-studio/actions/workflows/pages.yml). Este paso de activación es necesario por permisos de GitHub. El enlace HTML descargable permanece disponible para uso sin conexión. El enlace HTML descargable permanece disponible para uso sin conexión.
-
-## Cómo funciona
-
-```mermaid
-flowchart LR
-    A[Escenario económico] --> B[Variable explicativa y supuesto]
-    B --> C[Motor cualitativo]
-    C --> D[Secuencias 1.º / 2.º orden]
-    D --> E[Mapa causal]
-    D --> F[Cuatro mercados]
-    D --> G[IS–LM–BP]
-    D --> H[Explicaciones]
-    E --> I[Modo exposición / respaldo]
-    F --> I
-    G --> I
-    H --> I
-```
-
-**Principio central:** las flechas, las explicaciones y las curvas deben contar *la misma historia económica*. Las rutas alternativas representan supuestos distintos, no resultados estadísticos estimados. Ver [metodología y convenciones](./docs/METODOLOGIA.md).
-
-## Estructura del repositorio
-
-```text
+~~~text
 macro-studio/
-├── index.html                                  # Aplicación autónoma; GitHub Pages
-├── Macro_Studio_5_0_Final_Notebook_Generador.ipynb
-├── src/                                        # Código extraído del HTML operativo
+├── Macro_Studio_5_3_Notebook_Generador.ipynb
+├── index.html
+├── src/
 │   ├── engine.js
-│   ├── references.js
 │   ├── app.js
+│   ├── references.js
 │   └── styles.css
-├── assets/screenshots/                         # Capturas originales seleccionadas
-├── tests/                                      # Regresión económica + UI
-│   ├── test_app.py
-│   └── resultados_qa_base.json
-├── docs/                                       # Metodología, arquitectura y alcance
-├── .github/workflows/ci.yml                # Pruebas automatizadas en GitHub Actions
-├── .github/workflows/lanzamiento-v5.yml     # Publicación inicial v5.0.0
-├── LICENSE                                     # Licencia MIT
-├── .gitattributes                              # Estadísticas de lenguajes GitHub Linguist
-├── .gitignore
+├── assets/screenshots/actuales/
+├── scripts/capturar_vistas.py
+├── tests/test_app.py
+├── docs/
+├── .github/workflows/
+│   ├── ci.yml
+│   ├── sincronizar-notebook.yml
+│   └── pages.yml
 ├── CITATION.cff
-├── CHANGELOG.md
+├── LICENSE
 └── README.md
-```
+~~~
 
-Las fuentes de `src/` son una **copia inspeccionable del HTML que se entrega**, no una segunda implementación. El archivo de producción y el notebook son autónomos; no importan estos módulos de forma externa. Para reconstruir la aplicación se ejecuta el notebook.
+Los módulos de código de la carpeta src son copias inspeccionables del HTML generado, no implementaciones independientes. Se conservan las versiones anteriores para comparación histórica.
 
-## Validación y límites
+## Alcance, autoría y licencia
 
-El material de origen incluye un registro de **255 configuraciones ejecutadas** y **22 verificaciones funcionales**. Estas pruebas comprueban propiedades como la numeración, las relaciones del diagrama, el comportamiento de LM frente a Ms y las exportaciones; **no constituyen una validación empírica de todos los escenarios**. La suite reproducible y sus instrucciones están en [`tests/`](./tests/) y [`docs/VALIDACION.md`](./docs/VALIDACION.md).
+El proyecto surge del trabajo académico de **Macroeconomía I y II de la Universidad Fidélitas** y sigue la metodología estudiada en sus presentaciones y clases. El diseño, la programación y la integración de Macro Studio corresponden a **Juan Ignacio Garbanzo Fallas**.
 
-Macro Studio trabaja con **direcciones cualitativas**. No calcula magnitudes de crecimiento, inflación o desempleo, y cuando existen fuerzas opuestas debe declararse el supuesto elegido. Las posiciones de las curvas son esquemáticas; su geometría no representa estimaciones calibradas.
+Es un **modelo cualitativo docente**, no una estimación econométrica ni una predicción calibrada. Las pruebas automáticas detectan regresiones técnicas; cada interpretación debe seguir siendo coherente con sus supuestos. Consultá la [metodología](./docs/METODOLOGIA.md), la [validación](./docs/VALIDACION.md) y el [registro de cambios](./CHANGELOG.md).
 
-## Origen académico y reconocimiento
-
-Proyecto desarrollado por **Juan Ignacio Garbanzo Fallas** a partir de ejercicios de macroeconomía primero resueltos manualmente y posteriormente sistematizados en un entorno interactivo. La metodología de los cuatro mercados y la discusión de rutas alternativas se trabajaron en las clases de **Ronney Zamora Leiva**, Universidad Fidélitas, Costa Rica.
-
-Este es un proyecto independiente de aprendizaje y desarrollo. **No es una publicación oficial ni implica respaldo institucional de la universidad o del docente.** Las marcas y materiales de terceros pertenecen a sus titulares.
-
-## Colaborar y citar
-
-Si encontrás un comportamiento inesperado, describí el shock, el supuesto, la ruta esperada y el resultado obtenido siguiendo [CONTRIBUTING.md](./CONTRIBUTING.md). Si utilizás este trabajo en un proyecto académico, consultá [`CITATION.cff`](./CITATION.cff).
-
-**Licencia:** [MIT](./LICENSE) © 2026 Juan Ignacio Garbanzo Fallas. Se permite usar, estudiar, modificar y redistribuir el software conservando el aviso de copyright y la licencia. Las marcas y contenidos de terceros mantienen sus respectivos derechos.
+**Licencia:** [MIT](./LICENSE) © 2026 Juan Ignacio Garbanzo Fallas. Los materiales y las marcas de terceros conservan sus derechos respectivos.
 
 ---
 
-<div align="center">
-  <sub><b>Macro Studio</b> · Economía explicable, secuencia por secuencia.<br/>Hecho para pensar con modelos, no para reemplazar el criterio económico.</sub>
-</div>
+<div align="center"><strong>Macro Studio</strong> · Una ruta causal para entender la transmisión económica.</div>

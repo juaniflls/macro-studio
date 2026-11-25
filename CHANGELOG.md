@@ -1,5 +1,15 @@
 # Registro de cambios
 
+## 5.3.0 — 2026-11-24
+
+- Se revisa la interpretación IS–LM–BP para diferenciar el resultado visible en el gráfico y la inferencia cualitativa sin magnitudes calibradas.
+- Se añaden cuatro situaciones reutilizables de diagnóstico y selección de políticas económicas, sin nombres de grupos ni etiquetas de procedencia.
+- Se distinguen políticas fiscales (G, impuestos) y monetarias (instrumentos del BCCR).
+- Se reorganizan las fórmulas en un formulario completo y fundamentos consultables al final de cada explicación.
+- Se preservan las secuencias y conexiones de los cuatro mercados; las relaciones simultáneas no se representan como causas cronológicamente anteriores.
+- Se actualizan el README, el notebook autónomo y ocho capturas reproducibles de la aplicación.
+- La ejecución del notebook genera index.html y automatiza su publicación en GitHub Pages.
+
 ## 5.1.0 — 2026-11-24
 
 - Se añade el formulario cualitativo de los cuatro mercados con G identificado como gasto público del Gobierno.

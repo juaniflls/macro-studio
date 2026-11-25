@@ -33,3 +33,10 @@ python tests/test_app.py
 ```
 
 Si Chromium no está disponible en Linux, instalalo con `python -m playwright install --with-deps chromium` o ejecutá la acción automática de GitHub incluida en el repositorio.
+
+
+## Publicación y capturas de Macro Studio 5.3
+
+La fuente principal es Macro_Studio_5_3_Notebook_Generador.ipynb. El flujo sincronizar-notebook.yml lo ejecuta, regenera index.html y sus módulos inspeccionables, comprueba sintaxis y realiza pruebas funcionales con tests/test_app.py. También reproduce ocho capturas desde la propia aplicación utilizando scripts/capturar_vistas.py. Una vez superados los controles solicita el despliegue de GitHub Pages.
+
+La prueba de que el sitio responde se conserva en las ejecuciones de GitHub Actions. El sitio publicado debe verificarse junto con el commit correspondiente; una ejecución exitosa de pruebas no sustituye la revisión económica por caso.
