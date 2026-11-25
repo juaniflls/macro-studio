@@ -1,8 +1,8 @@
 # Publicar Macro Studio en GitHub
 
-**Repositorio recomendado:** `juaniflls/macro-studio`.
+**Repositorio público:** [`juaniflls/macro-studio`](https://github.com/juaniflls/macro-studio).
 
-## Crear el repositorio
+## Datos y estructura del repositorio
 
 En https://github.com/new completá:
 
@@ -12,9 +12,9 @@ En https://github.com/new completá:
 - **Visibilidad:** Público (si deseás mostrarlo públicamente)
 - **Añadir README:** Desactivado (el paquete ya contiene uno)
 - **Añadir .gitignore:** Ninguno (el paquete ya contiene uno)
-- **Licencia:** Sin licencia por ahora; elegí una cuando definas los permisos de reutilización.
+- **Licencia:** MIT, disponible en `LICENSE`.
 
-Después de crear el repositorio, subí el contenido descomprimido de este paquete, no el ZIP como un único archivo.
+Este repositorio ya existe. Si clonás otro ejemplar o preparás una copia, subí los archivos descomprimidos; no el ZIP como único archivo.
 
 ## Cargar con Git desde Terminal
 
@@ -27,7 +27,11 @@ git remote add origin https://github.com/juaniflls/macro-studio.git
 git push -u origin main
 ```
 
-GitHub puede pedir iniciar sesión con GitHub CLI, token o credencial configurada. No pegues contraseñas ni tokens en el repositorio.
+Si el repositorio ya existe, primero clonalo en lugar de inicializar una carpeta desconectada. GitHub puede pedir iniciar sesión con GitHub CLI, token o credencial configurada. No pegues contraseñas ni tokens en el repositorio.
+
+## Licencia y versiones
+
+El código se distribuye bajo licencia MIT. El lanzamiento inicial se etiqueta `v5.0.0`. Los archivos `index.html` y el notebook contienen la aplicación publicada. GitHub Linguist excluye los HTML generados del porcentaje de lenguajes mediante `.gitattributes`; esto no modifica los archivos ni convierte JavaScript en Python.
 
 ## Habilitar el sitio
 
