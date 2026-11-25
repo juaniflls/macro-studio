@@ -6,6 +6,8 @@ html=(root/'index.html').read_text(encoding='utf-8')
 report_dir=root/'tests'/'out'
 report_dir.mkdir(parents=True,exist_ok=True)
 errors=[];checks={};examples={};count=0
+# Evita publicar HTML con marcadores de conflictos Git no resueltos.
+checks['no_unresolved_merge_conflicts']=not any(marker in html for marker in ('<<<<<<<', '=======', '>>>>>>>'))
 expected={
  'ied':{'goods':[2,4],'labor':[3,5],'money':[3,5],'fx':[1,3]},
  'ied_dual':{'goods':[1,2],'labor':[2,3],'money':[2,3],'fx':[1,2]},
