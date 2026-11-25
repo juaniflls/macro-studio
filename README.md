@@ -11,17 +11,25 @@
   <img alt="JavaScript nativo" src="https://img.shields.io/badge/JavaScript-Nativo-F7DF1E?style=flat-square&logo=javascript&logoColor=111" />
   <img alt="HTML autónomo" src="https://img.shields.io/badge/HTML5-Aut%C3%B3nomo-E34F26?style=flat-square&logo=html5&logoColor=white" />
   <img alt="Uso sin conexión" src="https://img.shields.io/badge/Sin%20conexi%C3%B3n-Sin%20servidor-167AB5?style=flat-square" />
-  <img alt="Versión" src="https://img.shields.io/badge/Versi%C3%B3n-5.0-C93E85?style=flat-square" />
+  <img alt="Versión" src="https://img.shields.io/badge/Versi%C3%B3n-5.1-C93E85?style=flat-square" />
   <a href="./LICENSE"><img alt="Licencia MIT" src="https://img.shields.io/badge/Licencia-MIT-167AB5?style=flat-square" /></a>
 </p>
 
-**[Abrir Macro Studio en línea](https://juaniflls.github.io/macro-studio/) · [Descargar aplicación HTML](./index.html) · [Ejecutar el notebook](./Macro_Studio_5_0_Final_Notebook_Generador.ipynb) · [Entender el modelo](./docs/METODOLOGIA.md) · [Auditoría y pruebas](./docs/VALIDACION.md)**
+**[Abrir Macro Studio en línea](https://juaniflls.github.io/macro-studio/) · [Descargar aplicación HTML](./index.html) · [Ejecutar el notebook](./Macro_Studio_5_1_Notebook_Generador.ipynb) · [Entender el modelo](./docs/METODOLOGIA.md) · [Auditoría y pruebas](./docs/VALIDACION.md)**
 
 <sub>Desarrollado por <strong>Juan Ignacio Garbanzo Fallas</strong> · Proyecto académico de economía convertido en una herramienta reutilizable.</sub>
 
 </div>
 
 ---
+
+## Novedades de la revisión 5.1
+
+- **Formulario económico desplegable:** funciones de C, I, G, X, M y relaciones fundamentales de los cuatro mercados, basadas en las presentaciones del curso.
+- **Trazabilidad causal:** las flechas conectan una secuencia anterior con una posterior; el retorno cambiario `O$2 → TC → X−M → DA3` no atribuye a DL3/Md3 una causa simultánea.
+- **Política fiscal diferenciada de política monetaria:** G se modifica en bienes y servicios; la liquidez del BCCR se modifica mediante Ms.
+- **Diagnóstico opcional IS–LM–BP:** identificación ilustrativa de excesos y selección de medidas; no constituye una predicción ni una política que garantice equilibrio general.
+- **Notebooks y publicación:** al ejecutar el generador 5.1 se produce `index.html`, el archivo de entrada de GitHub Pages.
 
 ## Una pregunta. Cuatro mercados. Una ruta económica explicable.
 
@@ -96,7 +104,7 @@ python -m pip install jupyterlab
 jupyter lab
 ```
 
-Abrí [`Macro_Studio_5_0_Final_Notebook_Generador.ipynb`](./Macro_Studio_5_0_Final_Notebook_Generador.ipynb) y ejecutá todas las celdas. Obtendrás `Macro_Studio_5_0.html` en el directorio de ejecución.
+Abrí [`Macro_Studio_5_1_Notebook_Generador.ipynb`](./Macro_Studio_5_0_Final_Notebook_Generador.ipynb) y ejecutá todas las celdas. Obtendrás `Macro_Studio_5_0.html` en el directorio de ejecución.
 
 ### Publicación web mediante GitHub Pages
 

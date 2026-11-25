@@ -7,6 +7,7 @@ const MS = (()=>{
  const CURVES={goods:['da'],labor:['ol','dl'],money:['ms','md'],fx:['os','ds']};
  const CATALOG=[
  // Goods market: effect is change in planned aggregate expenditure.
+ ['gasto_publico','Gasto público (política fiscal)','goods','da',1,'Política fiscal → G → DA','G','Gasto público: aumento expansivo, disminución restrictiva. No es emisión monetaria del BCCR.'],
  ['infra','Inversión pública en infraestructura','goods','da',1,'G: infraestructura','G','Gasto público destinado a infraestructura.'],
  ['compras','Compras del sector público','goods','da',1,'G: compras','G','Adquisiciones públicas de bienes y servicios.'],
  ['salarios_publicos','Gasto del gobierno en salarios','goods','da',1,'G: salarios públicos','G','Componente directo del gasto gubernamental.'],
@@ -254,7 +255,11 @@ function analyze(spec={},extra=[]){
     const round=changes[m].length?'segundo':'primero';
     const ev={id,stage,market:m,curve,sign:v,why:clean(why),round,kind,eligible,parents:deps};
     changes[m].push(ev);
-    for(const parent of deps)edges.push({from:parent,to:id,variable:parent.split(':')[0],why:ev.why});
+    for(const parent of deps){
+      const stageParent=Number(parent.split(':')[1]);
+      if(!Number.isInteger(stageParent)||stageParent>=stage)throw new Error('Dependencia causal sin avance temporal: '+parent+' → '+id+' ('+sh.id+')');
+      edges.push({from:parent,to:id,variable:parent.split(':')[0],why:ev.why});
+    }
     return ev;
   }
   const step=(n,msg)=>stages.push({n,title:'Secuencia '+n,text:msg,round:n<3?'primero':'segundo'});
@@ -269,7 +274,7 @@ function analyze(spec={},extra=[]){
   }
   function goodsShock(){
     const cause={
-      infra:'La inversión pública en infraestructura modifica G',compras:'Las compras gubernamentales modifican G',
+      gasto_publico:'La política fiscal modifica directamente el gasto público G',infra:'La inversión pública en infraestructura modifica G',compras:'Las compras gubernamentales modifican G',
       salarios_publicos:'Los salarios del sector público forman parte de G',pensiones:'Las pensiones y transferencias modifican el ingreso disponible y el consumo',
       transferencias:'Las transferencias cambian el ingreso disponible Yd y C',impuestos:'Los impuestos cambian inversamente Yd y el consumo C',
       consumo_aut:'El consumo autónomo modifica C',pmc:'La propensión marginal a consumir modifica C',
@@ -353,14 +358,15 @@ function analyze(spec={},extra=[]){
       add('labor',3,'dl',Y,`Y ${verb(Y)} por bienes y servicios (efecto 2); DL y los salarios ${plural(Y)}.`,['goods:2']);
       add('money',3,'md',Y,`Y ${verb(Y)} por bienes y servicios (efecto 2); las transacciones y Md ${plural(Y)}.`,['goods:2']);
       add('fx',3,'ds',Y,`Y ${verb(Y)} por bienes y servicios (efecto 2); las importaciones y D$ ${plural(Y)}.`,['goods:2']);
-      const opts=[{key:'consumption',label:'W → C',sign:Y},{key:'investment',label:'i → I',sign:-Y},{key:'exchange',label:'TC → X−M',sign:tc0}];
-      const net=balanceFor(3,opts,['fx:2','labor:3','money:3']);
-      // Stage 3 goods is a convergence of the TC from FX2 and wage/money feedback from stage 3.
-      add('goods',3,'da',net,`El tipo de cambio ${verb(tc0)} por O$ de la secuencia 2, modifica X−M ${verb(tc0)}. Además, en la secuencia 3 los salarios ${plural(Y)} y C ${verb(Y)}; la tasa de interés recibe retorno y la inversión I ${verb(-Y)}. ${balance.note}.`,['fx:2','labor:3','money:3'],'net',choice!=='investment');
-      add('labor',4,'dl',net,`Y ${verb(net)} por el retorno de DA en la secuencia 3; DL y los salarios ${plural(net)}.`,['goods:3']);
+      // Clase 24/11, ruta monetaria: solo O$2 → TC2 puede justificar DA3.
+      // DL3 y Md3 son respuestas SIMULTÁNEAS de Y2: no producen otra DA3.
+      // La elección de C/I/X−M corresponde a otros recorridos con antecedentes anteriores.
+      const net=tc0;
+      add('goods',3,'da',net,`En la secuencia 2, la oferta de dólares O$ ${verb(fxOS)} y el tipo de cambio TC ${verb(tc0)}. Según X = f(TC, Y*, P, P*) y M = f(TC, Y, P, P*), las exportaciones ${plural(tc0)} y las importaciones ${plural(-tc0)}; por ello X−M ${verb(tc0)} y DA ${verb(tc0)} (DA2→DA3).`,['fx:2'],'fx-net',true);
+      add('labor',4,'dl',net,`La producción Y ${verb(net)} por el cambio de X−M de DA3, modifica DL ${verb(net)} y los salarios ${plural(net)} en la secuencia 4.`,['goods:3']);
       step(1,`BCCR Ms ${arrow(inc)} → i ${arrow(i)}.`);step(2,`i ${arrow(i)} provoca I ${arrow(Y)} y O$ ${arrow(fxOS)}.`);
-      step(3,`Y ${arrow(Y)} provoca DL, Md, D$; tipo de cambio y salarios determinan un único DA3: ${balance.note}.`);
-      step(4,`La nueva Y modifica DL ${arrow(net)}; no se crea un efecto 5.`);
+      step(3,`Y2 ${arrow(Y)} provoca simultáneamente DL3, Md3 y D$3; O$2 ${arrow(fxOS)} → TC ${arrow(tc0)} modifica X−M y genera DA3 ${arrow(net)}.`);
+      step(4,`La nueva Y3 modifica DL4 ${arrow(net)}; no se crea un efecto 5.`);
       // BP por política monetaria se interpreta desde el canal externo observado en la presentación, no por i aislada.
       bp=inc;bpWhy=`La política del BCCR induce salida/entrada de capitales representada por O$ ${arrow(fxOS)}.`;
     }else{

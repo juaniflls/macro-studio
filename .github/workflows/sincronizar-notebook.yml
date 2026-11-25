@@ -1,0 +1,63 @@
+name: Sincronizar index.html desde el notebook 5.1
+
+on:
+  push:
+    branches: [main]
+    paths: [Macro_Studio_5_1_Notebook_Generador.ipynb]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: macro-studio-notebook
+  cancel-in-progress: false
+
+jobs:
+  regenerar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar herramientas de ejecución y pruebas
+        run: |
+          python -m pip install ipython -r requirements-dev.txt
+          python -m playwright install --with-deps chromium
+      - name: Regenerar HTML desde el notebook publicado
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          nb=json.loads(Path("Macro_Studio_5_1_Notebook_Generador.ipynb").read_text(encoding="utf-8"))
+          env={}
+          for c in nb["cells"]:
+              if c["cell_type"]=="code": exec("".join(c["source"]), env)
+          assert Path("index.html").exists()
+          assert "macro studio" in Path("index.html").read_text(encoding="utf-8").lower()
+          Path("src/engine.js").write_text(env["MOTOR_ECONOMICO_JS"], encoding="utf-8")
+          Path("src/app.js").write_text(env["APLICACION_JS"], encoding="utf-8")
+          Path("src/styles.css").write_text(env["ESTILOS_CSS"], encoding="utf-8")
+          Path("src/references.js").write_text(env["REFERENCIAS_JS"], encoding="utf-8")
+          PY
+      - name: Comprobar sintaxis JS
+        run: |
+          node --check src/engine.js
+          node --check src/app.js
+      - name: Probar regresión funcional
+        run: python tests/test_app.py
+      - name: Versionar HTML y fuentes regeneradas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html src/engine.js src/app.js src/styles.css src/references.js
+          if git diff --cached --quiet; then
+            echo "index.html y fuentes ya están sincronizados con el notebook."
+          else
+            git commit -m "Generar index.html y fuentes desde notebook 5.1"
+            git push
+          fi

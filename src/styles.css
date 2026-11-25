@@ -136,3 +136,32 @@
 @media(max-width:1090px){.workspace{grid-template-columns:268px minmax(0,1fr)}.rail{position:relative;top:0;height:auto;max-height:100vh}.topbar{height:auto;min-height:78px;flex-wrap:wrap;padding:12px 17px}.main{padding:20px 16px}}
 @media(max-width:740px){.workspace{display:block}.rail{position:relative;top:auto;height:auto;max-height:none;padding:16px;border-right:0;border-bottom:1px solid var(--border)}.preslist,.case-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:6px}.pres-row,.case-row{min-width:0}.rail-label{display:block}.rail-note{display:block}.rail-actions{grid-template-columns:repeat(3,minmax(0,1fr))}.rail-wide{white-space:normal;font-size:11px}.causal-svg{min-width:850px}.causal-map{overflow-x:auto}}
 @media print{.causal-panel{background:#fff}.causal-svg{min-width:0}.rail{display:none!important}}
+
+/* Macro Studio 5.1 · Formulario y diagnóstico opcional; azul/rosa consistentes. */
+.formula-library{border:1px solid #cfdfeb;border-radius:14px;background:#f9fcff;margin:12px 0 18px;color:#27475e;overflow:hidden}
+.formula-library summary{list-style:auto;cursor:pointer;padding:17px 19px;font-weight:900;font-size:14px;color:#20577b;background:#edf6fc}
+.formula-library[open] summary{border-bottom:1px solid #d5e4ef}
+.formula-intro,.formula-legend{margin:15px 18px 8px;line-height:1.65;color:#536f83;font-size:12px}
+.formula-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;padding:12px 17px}
+.formula-block{border:1px solid #dce7ef;background:#fff;border-radius:10px;padding:12px 15px;min-width:0}
+.formula-block h4{font-size:14px;margin:0 0 7px;color:#193c56}
+.formula-main{font-size:14px;font-weight:900;color:#1477ad;padding:6px 0 10px}
+.formula-block p{font-size:12px;margin:6px 0;line-height:1.58;overflow-wrap:anywhere}
+.policy-panel{border:1px solid #c9ddea;border-radius:16px;background:linear-gradient(130deg,#fff,#f3f9fe);padding:20px;margin:14px 0 22px}
+.policy-heading h3{font-size:19px;margin:5px 0;color:#1b3a51}
+.policy-heading p{font-size:12.5px;line-height:1.65;color:#597489;max-width:970px}
+.policy-layout{display:grid;grid-template-columns:minmax(0,1.24fr) minmax(285px,.75fr);gap:17px;margin-top:15px}
+.policy-graph{border:1px solid #d7e5ef;background:#fff;border-radius:12px;overflow:hidden;padding:8px}
+.policy-svg{display:block;width:100%;height:auto;max-height:390px;cursor:crosshair}
+.policy-pin{cursor:pointer}.policy-pin circle{fill:#fff;stroke:#2381b5;stroke-width:2.5}.policy-pin text{font-size:13px;font-weight:900;fill:#1477a9;pointer-events:none}.policy-pin.active circle{fill:#e5f3fb;stroke:#c93e85;stroke-width:3.3}.policy-pin.active text{fill:#b62f73}
+.policy-curve{font-size:15px;font-weight:900;paint-order:stroke;stroke:#fff;stroke-width:4px}
+.policy-chart-note{font-size:11.5px;color:#648096;padding:0 8px;line-height:1.5}
+.policy-reading{background:#fff;border:1px solid #d7e5ef;border-radius:12px;padding:16px;align-self:start;color:#274359}
+.policy-choices{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.policy-choices .button{min-width:76px}
+.policy-reading h4{font-size:15px;margin:8px 0}.policy-reading p{font-size:12.5px;line-height:1.6;margin:7px 0}
+.policy-recommendation{margin:12px 0;padding:12px;background:#f4faff;border-left:4px solid #1879b9;border-radius:7px}
+.policy-recommendation strong{font-size:13px}.policy-note{display:block;margin-top:11px;line-height:1.55;color:#5b7489}
+@media(max-width:950px){.policy-layout{grid-template-columns:1fr}.formula-grid{grid-template-columns:1fr}}
+@media print{.formula-library:not([open]){display:none}.policy-panel{break-inside:avoid;page-break-inside:avoid}.policy-layout{grid-template-columns:1fr 1fr}}
+
+.market-formula{margin:0 17px 5px;padding:9px 13px;border:1px solid #e0eaf2;background:#f6fbfe;border-radius:8px;color:#446982;font-size:11.5px;line-height:1.55;font-weight:750}

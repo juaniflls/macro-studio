@@ -101,6 +101,10 @@ with sync_playwright() as pw:
  with page.expect_download(timeout=9000) as dl: page.locator('button[data-act="export-html"]').click()
  f=dl.value;f.save_as(report_dir/'html_export_validation.html')
  checks['HTML_export']=len((report_dir/'html_export_validation.html').read_text())>100000
+ # reglas nuevas de Macro Studio 5.1 (sin retirar ninguna prueba previa)
+ checks['money_no_same_sequence_edges']=page.evaluate("""()=>{let a=MS.analyze({shockId:'expansion_monetaria',direction:1,balanceChoice:'consumption',routeMode:'cambiario'});return a.edges.every(e=>Number(e.from.split(':')[1])<Number(e.to.split(':')[1]))&&a.changes.goods.length===2&&a.changes.goods[1].parents.join(',')==='fx:2'}""")
+ checks['fiscal_expansion_starts_goods']=page.evaluate("""()=>{let a=MS.analyze({shockId:'gasto_publico',direction:1,routeMode:'cambiario'});return a.changes.goods[0].stage===1&&a.changes.goods[0].sign===1&&a.islm.lm===0&&a.islm.is>0}""")
+ checks['formulario_cuatro_mercados']=page.locator('.formula-library').count()>=1
  # exposure
  page.locator('button[data-act="present"]').click()
  checks['exposure_contains_diagram']=page.locator('.expo .causal-panel').count()==1
