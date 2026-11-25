@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -37,6 +38,21 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: sitio
+      - name: Comprobar disponibilidad del paquete de Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for intento in $(seq 1 12); do
+            total=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.name=="github-pages")] | length')
+            if [ "$total" -gt 0 ]; then
+              echo "Paquete github-pages disponible."
+              exit 0
+            fi
+            echo "Esperando el registro del paquete de Pages (intento $intento)..."
+            sleep 5
+          done
+          echo "No aparece el paquete github-pages en la API de GitHub."
+          exit 1
       - name: Desplegar Macro Studio
         id: deployment
         uses: actions/deploy-pages@v4
