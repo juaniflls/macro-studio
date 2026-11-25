@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Macro Studio 5.1 · Laboratorio macroeconómico</title><style>:root{--ink:#172b3d;--body:#33485e;--muted:#698197;--border:#d9e3ec;--blue:#167ab5;--sky:#e9f4fb;--rose:#c93e85;--paper:#ffffff;--bg:#edf2f6;--navy:#142c40;--shadow:0 6px 22px rgba(21,49,72,.07)}
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Macro Studio 5.3 · Simulador macroeconómico interactivo</title><style>:root{--ink:#172b3d;--body:#33485e;--muted:#698197;--border:#d9e3ec;--blue:#167ab5;--sky:#e9f4fb;--rose:#c93e85;--paper:#ffffff;--bg:#edf2f6;--navy:#142c40;--shadow:0 6px 22px rgba(21,49,72,.07)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif;color:var(--ink);font-size:14px;line-height:1.55}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.35;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #80b9e5;outline-offset:2px}
 .topbar{height:78px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 28px;position:sticky;top:0;z-index:30;box-shadow:0 2px 10px #122e450c}.identity{display:flex;align-items:center;gap:13px;min-width:205px}.identity strong{display:block;font-size:15px;letter-spacing:.055em;line-height:1.25}.identity small{display:block;color:var(--muted);font-size:11px}.logomark{width:45px;height:45px;border-radius:13px;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:900;letter-spacing:-2px;flex-shrink:0}.logomark span{font-size:11px;font-weight:800;color:#82c9ed;margin-left:1px;align-self:center}.toptools,.caseactions,.expo-buttons{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}.button{border:1px solid #cbd9e5;background:#fff;color:#23445e;padding:9px 13px;border-radius:9px;min-height:36px;font-size:12px;font-weight:750;white-space:nowrap;transition:background .16s,box-shadow .16s}.button:hover{background:#edf5fa;box-shadow:0 2px 8px #20354715}.button.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.button.primary:hover{background:#234964}.button.ghost{background:transparent;color:#718599}.button.small{font-size:11px;padding:6px 10px;min-height:31px}.button.icon{font-size:24px;border:0;width:38px;height:38px}.workspace{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:calc(100vh - 78px)}
 .rail{background:#f9fbfd;border-right:1px solid var(--border);padding:24px 16px;position:sticky;top:78px;height:calc(100vh - 78px);overflow-y:auto}.rail-label,.rail-row{font-size:10px;font-weight:900;letter-spacing:.13em;color:#788ea2;margin:0 8px 14px}.preslist,.case-list{display:grid;gap:5px}.rail-row{display:flex;justify-content:space-between;align-items:center;margin-top:30px;margin-bottom:10px}.rail-add{min-height:26px;padding:1px 10px;font-size:18px}.pres-entry,.case-entry{display:flex;align-items:center;width:100%;border:1px solid transparent;padding:12px 10px;border-radius:9px;background:none;color:#466075;text-align:left;gap:9px;font-size:12px}.pres-entry:hover,.case-entry:hover{background:#eff5fa}.pres-entry.on,.case-entry.on{background:#e9f2fa;border-color:#c6deee;color:#0f507e}.pres-entry b{margin-left:auto;color:#668ba5;font-size:11px}.truncate{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.folder-icon{font-size:17px;color:#557e9e}.case-index{font-size:10px;color:#9aafbf;letter-spacing:.05em;font-weight:800}.rail-actions{margin-top:20px;display:grid;gap:9px}.rail-wide{width:100%;background:#fff}.rail-wide.soft{color:#215f89;border-color:#b8d8ed}.rail-note{font-size:11px;color:#8fa0b0;border-top:1px solid var(--border);margin-top:26px;padding:19px 8px}
@@ -166,6 +166,82 @@
 @media print{.formula-library:not([open]){display:none}.policy-panel{break-inside:avoid;page-break-inside:avoid}.policy-layout{grid-template-columns:1fr 1fr}}
 
 .market-formula{margin:0 17px 5px;padding:9px 13px;border:1px solid #e0eaf2;background:#f6fbfe;border-radius:8px;color:#446982;font-size:11.5px;line-height:1.55;font-weight:750}
+
+/* Formulario económico desarrollado y trazabilidad de variables · revisión local 5.2 */
+.formula-library{margin:15px 0 22px}.formula-library summary{font-size:14px;line-height:1.5}
+.formula-intro{font-size:12px;margin:16px 19px}.formula-controls{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;padding:8px 18px 3px}
+.formula-step-label{display:flex;align-items:center;gap:10px;color:#304f69;font-weight:800;font-size:12px;flex-wrap:wrap}
+.formula-step-label select{min-width:180px;padding:8px 11px;border:1px solid #b9d0e1;background:#fff;color:#193f59;border-radius:9px;font-size:12px}
+.formula-pill{display:inline-flex;align-items:center;gap:7px;color:#58758b;font-size:11px;font-weight:800}
+.formula-pill .dot{width:11px;height:11px;border-radius:4px;border:1px solid #1879b9;background:#dff1ff;display:inline-block}
+.formula-pill .dot.second{background:#f9e4ee;border-color:#c93e85}
+.formula-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:15px}
+.formula-block{padding:16px 16px 18px}.formula-block h4{font-size:15px;margin:0 0 11px;padding-bottom:10px;border-bottom:1px solid #e4eaf0}
+.formula-block h4 span{font-size:12px;font-weight:500;color:#688296}
+.formula-row{padding:10px 0;border-bottom:1px solid #edf1f5}.formula-row:last-child{border:0}
+.formula-row-title{font-size:11px;letter-spacing:.025em;color:#506c83;font-weight:900;text-transform:uppercase;margin-bottom:5px}
+.formula-equation{font-weight:850;font-size:13px;line-height:1.7;color:#213d51;overflow-wrap:anywhere}
+.formula-equation small{font-weight:650;color:#805f5b;font-size:10px}
+.formula-row p{margin:6px 0 0;color:#4b6578;font-size:11.5px;line-height:1.6}
+.formula-term{font-weight:880;white-space:normal}.formula-term.formula-hit{padding:2px 4px;border-radius:5px;background:#e5f3fb;color:#126da6;border:1px solid #acd6ee}
+.formula-term.formula-hit.second{background:#fbe6f1;color:#ab2f72;border:1px solid #eab9d4}
+.formula-nested{margin:10px 0 2px;padding:9px 10px;border-left:3px solid #167ab5;border-radius:7px;background:#f5f9fd}
+.formula-nested summary{padding:0!important;border:0!important;list-style:auto;font-size:11.5px!important;color:#245c82!important;background:transparent!important;font-weight:850}
+.formula-nested-content{padding:10px 0 1px;font-size:12px;line-height:1.65}
+.formula-combined{grid-column:1/-1;background:#fbfdff}
+.formula-in-narrative{margin:11px 16px 0;padding:10px 12px;background:#f5f9fc;border:1px solid #dbe7f0;border-radius:9px;color:#38586f;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+.formula-in-narrative>b{color:#1b638d;display:block;font-size:10px;letter-spacing:.055em;margin-bottom:4px}
+.narrative-second .formula-in-narrative{background:#fff7fb;border-color:#f0d5e6}
+.narrative-second .formula-in-narrative>b{color:#b33778}
+.formula-affect{color:#0d699c;font-weight:950;background:#e7f2fa;padding:1px 2px;border-radius:3px}
+.narrative-second .formula-affect{color:#a82d70;background:#fce6f1}
+@media(max-width:1050px){.formula-grid{grid-template-columns:1fr}.formula-combined{grid-column:auto}}
+@media print{.formula-library:not([open]){display:none}.formula-nested{break-inside:avoid}.formula-combined{grid-column:auto}}
+
+/* Revisión de jerarquía visual: la explicación conserva sus cuatro pasos y
+   el formulario económico vive como material de consulta, no como paso 0. */
+.formula-in-narrative{margin:17px 0 0;border:1px solid #dde7f0;border-radius:10px;background:#fafcff;color:#3d5b6e;padding:0;overflow:hidden;font-size:12px}
+.formula-in-narrative summary{cursor:pointer;font-size:11.3px;font-weight:790;color:#30637f;padding:11px 14px;display:flex;gap:7px;align-items:center;list-style-position:inside}
+.formula-in-narrative[open] summary{border-bottom:1px solid #e2ebf2;background:#f3f8fc}
+.formula-inline-body{padding:13px 15px 6px;line-height:1.75;overflow-wrap:anywhere}
+.formula-in-narrative small{display:block;font-size:10.5px;line-height:1.55;color:#7890a1;padding:0 15px 12px}
+.narrative-second .formula-in-narrative{background:#fffafd;border-color:#f2ddea}
+.narrative-second .formula-in-narrative[open] summary{background:#fff0f7;border-bottom-color:#f2ddea}
+.formula-library{background:#fff;border-color:#d7e4ed;box-shadow:0 4px 17px rgba(40,75,99,.035);margin:18px 0 25px}
+.formula-library>summary{background:#f0f6fb;color:#24445e;padding:17px 21px;font-size:14px}
+.formula-block h4{border-bottom:1px solid #e4edf4;padding-bottom:10px}
+.formula-row{padding-block:12px}
+.formula-equation{line-height:1.75;overflow-wrap:anywhere}
+.formula-grid{row-gap:17px}
+.policy-overview{margin:16px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.policy-overview>div{padding:11px 12px;background:#fff;border:1px solid #d8e6ef;border-radius:10px;min-width:0}
+.policy-overview b{display:block;color:#205c85;font-size:11px;margin-bottom:4px}
+.policy-overview span{display:block;font-size:11px;line-height:1.5;color:#546e82}
+.policy-preset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:15px}
+.policy-preset{display:flex;align-items:flex-start;gap:9px;text-align:left;padding:10px;border:1px solid #d3e1ec;background:#fbfdff;color:#274b65;border-radius:9px;cursor:pointer;font-family:inherit;min-width:0}
+.policy-preset.active{background:#edf6fd;border-color:#1682bd;box-shadow:inset 0 0 0 1px #1682bd}
+.policy-preset>b{display:grid;place-items:center;width:26px;height:26px;flex:none;border-radius:9px;background:#e5f3fb;color:#126ca0}
+.policy-preset span{font-weight:850;font-size:11px;line-height:1.3}
+.policy-preset span small{font-weight:500;display:block;margin-top:5px;font-size:10px;line-height:1.35;color:#687f92}
+.policy-diagnostics{border-top:1px solid #e4edf3;padding-top:11px}
+.policy-diagnostics dl{display:grid;gap:9px;margin:11px 0}
+.policy-diagnostics dt{font-weight:850;font-size:10px;letter-spacing:.04em;color:#4f7894}
+.policy-diagnostics dd{font-size:12px;margin:3px 0 0;color:#233c52;line-height:1.35}
+.policy-status{display:inline-block;font-size:10px;border-radius:7px;padding:5px 8px;color:#22724a;background:#e9f7ee;font-weight:750}
+.policy-status.hypothesis{color:#915b1b;background:#fff3db}
+.policy-apply{width:100%;margin-top:7px}
+.policy-outcome{padding:17px 18px;margin:16px 15px 18px;border-radius:11px;background:#f7fbfe;border:1px solid #d6e6f1;color:#36566e}
+.policy-outcome-kicker{font-size:10px;color:#35749b;font-weight:900;letter-spacing:.075em}
+.policy-outcome h4{font-size:15px;margin:5px 0 8px;color:#21435d}
+.policy-outcome p{font-size:12px;line-height:1.7;margin:7px 0}
+.policy-outcome small{font-size:10px;line-height:1.5;color:#6a8398}
+.policy-outcome-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:13px 0}
+.policy-outcome-grid>div{background:white;border:1px solid #dbe8f1;border-radius:8px;padding:10px}
+.policy-outcome-grid span{font-size:10px;color:#607d91;display:block;line-height:1.45}
+.policy-outcome-grid b{font-size:12px;color:#1f577b;display:block;margin-top:5px}
+@media(max-width:1000px){.policy-overview{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:610px){.policy-overview,.policy-preset-grid,.policy-outcome-grid{grid-template-columns:1fr}.policy-heading h3{font-size:17px}}
+@media print{.formula-in-narrative:not([open]){display:none!important}.policy-overview{grid-template-columns:repeat(4,1fr)}.policy-preset-grid{grid-template-columns:repeat(2,1fr)}}
 </style><script id="macro-snapshot" type="application/json">null</script></head><body><div id="app"></div><script>/* Macro Studio · engine 0.1 · pure deterministic rules, no external libraries.
  * Signs are qualitative, not empirical elasticities. All functions can be tested without the UI.
  */
@@ -807,27 +883,27 @@ MS.analyze=analyze;
     ['¿Qué sucede si el gobierno aumenta el gasto público?','gasto_publico',1,'Política fiscal expansiva · bienes y servicios'],
     ['¿Qué sucede si el gobierno disminuye el gasto público?','gasto_publico',-1,'Política fiscal restrictiva · bienes y servicios'],
     ['¿Qué sucede si el BCCR aplica una política monetaria restrictiva?','contraccion_monetaria',1,'Política monetaria restrictiva · mercado monetario'],
-    ['¿Qué sucede si aumenta el gasto en infraestructura del sector público?','infra',1,'Mercado laboral · ejercicio #2'],
-    ['¿Qué sucede si disminuye el tipo de cambio?','tipo_cambio_exo',-1,'Mercado laboral · ejercicio #2'],
-    ['¿Qué sucede si disminuyen las tasas de interés?','tasas_nacionales',-1,'Ejercicio #1'],
-    ['¿Qué sucede si aumentan las importaciones?','importaciones',1,'Ejercicio #1 / Macroeconomía I'],
-    ['¿Qué sucede si las importaciones disminuyen?','importaciones',-1,'Ejercicio #2 / presentación laboral'],
-    ['¿Qué sucede si aumentan las tasas de interés?','tasas_nacionales',1,'Presentación laboral'],
-    ['¿Qué sucede si aumenta el tipo de cambio?','tipo_cambio_exo',1,'Ejercicios y presentaciones'],
-    ['¿Qué sucede si disminuye el gasto público en infraestructura?','infra',-1,'Ejercicios y presentaciones'],
-    ['¿Qué sucede si aumentan los salarios?','salario_exo',1,'Ejercicios y presentaciones'],
+    ['¿Qué sucede si aumenta el gasto en infraestructura del sector público?','infra',1,'Mercado de bienes y servicios'],
+    ['¿Qué sucede si disminuye el tipo de cambio?','tipo_cambio_exo',-1,'Mercado de bienes y servicios'],
+    ['¿Qué sucede si disminuyen las tasas de interés?','tasas_nacionales',-1,'Situación económica de referencia'],
+    ['¿Qué sucede si aumentan las importaciones?','importaciones',1,'Situación económica de referencia'],
+    ['¿Qué sucede si las importaciones disminuyen?','importaciones',-1,'Situación económica de referencia'],
+    ['¿Qué sucede si aumentan las tasas de interés?','tasas_nacionales',1,'Situación económica de referencia'],
+    ['¿Qué sucede si aumenta el tipo de cambio?','tipo_cambio_exo',1,'Situación económica de referencia'],
+    ['¿Qué sucede si disminuye el gasto público en infraestructura?','infra',-1,'Situación económica de referencia'],
+    ['¿Qué sucede si aumentan los salarios?','salario_exo',1,'Situación económica de referencia'],
     ['¿Qué sucede si hay un proceso migratorio hacia Costa Rica?','migracion_entrada',1,'Caso laboral / migración'],
     ['¿Qué sucede si hay un proceso migratorio fuera de Costa Rica?','migracion_salida',1,'Caso laboral / migración'],
-    ['¿Qué sucede si hay una mayor demanda por precaución a nivel nacional?','dinero_precaucion',1,'Ejercicios monetarios'],
-    ['¿Qué sucede si el gobierno disminuye la deuda interna?','deuda_interna',-1,'Mercado monetario · ejercicio de clase'],
-    ['¿Qué sucede si aumenta la deuda interna del gobierno?','deuda_interna',1,'Ejercicios monetarios'],
-    ['¿Qué sucede si aumentan los impuestos?','impuestos',1,'Ejercicios bienes y servicios'],
-    ['¿Qué sucede si disminuye la inversión extranjera directa?','ied',-1,'Ejercicios cambiarios'],
-    ['¿Qué pasa si disminuyen las tasas de interés internacionales?','tasas_externas',-1,'Mercado cambiario · ejemplo de clase'],
-    ['¿Qué pasa si aumentan las exportaciones como resultado de un TLC?','exportaciones',1,'Mercado cambiario · ejemplo de clase'],
-    ['¿Qué pasa si el BCCR aplica una política monetaria expansiva?','expansion_monetaria',1,'Mercado cambiario · ejemplo de clase'],
+    ['¿Qué sucede si hay una mayor demanda por precaución a nivel nacional?','dinero_precaucion',1,'Mercado monetario'],
+    ['¿Qué sucede si el gobierno disminuye la deuda interna?','deuda_interna',-1,'Mercado monetario'],
+    ['¿Qué sucede si aumenta la deuda interna del gobierno?','deuda_interna',1,'Mercado monetario'],
+    ['¿Qué sucede si aumentan los impuestos?','impuestos',1,'Mercado de bienes y servicios'],
+    ['¿Qué sucede si disminuye la inversión extranjera directa?','ied',-1,'Mercado cambiario'],
+    ['¿Qué pasa si disminuyen las tasas de interés internacionales?','tasas_externas',-1,'Mercado cambiario'],
+    ['¿Qué pasa si aumentan las exportaciones como resultado de un TLC?','exportaciones',1,'Mercado cambiario'],
+    ['¿Qué pasa si el BCCR aplica una política monetaria expansiva?','expansion_monetaria',1,'Mercado cambiario'],
         
-    ['¿Qué sucede si la tecnología desplaza mano de obra a nivel nacional?','tecnologia_sust',1,'Mercado monetario · ejercicio de clase'],
+    ['¿Qué sucede si la tecnología desplaza mano de obra a nivel nacional?','tecnologia_sust',1,'Mercado monetario'],
     
   ];
   const mkcase=(title='Nuevo caso',shockId='infra',direction=1)=>({id:uid(),title,shockId,direction:shockId==='tecnologia_sust'?1:direction,showSecond:true,showIS:true,showFX:true,showExplanation:true,showPolicyMap:false,balanceChoice:'consumption',routeMode:'cambiario',dualChoice:'exchange',tradeChoice:'autonomous',manualNumbers:{},overrides:{},note:''});
@@ -845,6 +921,8 @@ MS.analyze=analyze;
   ]}
  ],activePres:'p-start',activeCase:null,customShocks:[]});
   let initial;try{initial=JSON.parse(document.getElementById('macro-snapshot')?.textContent||'null')}catch(_){initial=null}
+  let formulaStageSelection='all';
+  let formulaLibraryOpened=false;
   let state=initial; if(!state){try{state=JSON.parse(localStorage.getItem(KEY))}catch(_){state=null}}if(!state?.presentations?.length){try{const archived=JSON.parse(localStorage.getItem('macro-studio-visual-v32'));if(archived?.presentations?.length)state=archived;}catch(_){}}if(!state?.presentations?.length)state=seed(); state.version=51; for(const pr of state.presentations){for(const cs of pr.cases||[]){if(!['consumption','investment','exchange'].includes(cs.balanceChoice))cs.balanceChoice='consumption';cs.overrides??={};}}
   for(const p of state.presentations)for(const c of p.cases){if(c.shockId==='tecnologia_sust'){c.direction=1;if(/IA desplaza mano de obra/i.test(c.title))c.title='¿Qué sucede si la tecnología desplaza mano de obra a nivel nacional?';}c.showSecond??=true;c.showIS??=true;c.showFX??=true;c.showExplanation??=true;c.showPolicyMap??=false;c.manualNumbers??={};c.overrides??={};c.note??='';c.routeMode??='cambiario';c.dualChoice??='exchange';c.tradeChoice??='autonomous';}
   for(const savedPres of state.presentations){
@@ -886,7 +964,7 @@ MS.analyze=analyze;
     <div class="rail-actions">${btn('Nueva colección','new-pres','rail-wide')}${btn('Banco de ejercicios','bank','rail-wide soft')}${btn('Limpiar espacio','clear-workspace','rail-wide reset-workspace')}</div>
     <div class="rail-note">Los cambios quedan guardados en este navegador. Usá <b>Guardar JSON</b> para respaldar las colecciones antes de limpiarlas o cambiar de equipo.</div>
     </aside>`;
-  const controls=c=>`<div class="controlpanel"><div class="control-main"><label>Enunciado / título<input id="title-input" value="${esc(c.title)}" spellcheck="true"/></label><label>Variable explicativa<select id="shock-input">${Object.entries(MS.MARKETS).map(([market,title])=>`<optgroup label="${esc(title)}">${allShocks().filter(s=>s.market===market).map(s=>`<option value="${esc(s.id)}" ${c.shockId===s.id?'selected':''}>${esc(s.label)}</option>`).join('')}</optgroup>`).join('')}</select></label><label>Variación inicial${c.shockId==='tecnologia_sust'?'<small class="source-direction">El enunciado ya establece la sustitución laboral: DL disminuye.</small>':''}<select id="direction-input" ${c.shockId==='tecnologia_sust'?'disabled':''}><option value="1" ${c.direction>0?'selected':''}>${c.shockId==='tecnologia_sust'?'Sustituye mano de obra → DL ↓':'Aumenta ↑'}</option>${c.shockId==='tecnologia_sust'?'':`<option value="-1" ${c.direction<0?'selected':''}>Disminuye ↓</option>`}</select></label>${['exportaciones','importaciones','ingreso_socios'].includes(c.shockId)?`<label>Predominio entre dos vías<select id="trade-input"><option value="autonomous" ${c.tradeChoice!=='exchange'?'selected':''}>Predomina cambio comercial inicial</option><option value="exchange" ${c.tradeChoice==='exchange'?'selected':''}>Predomina retorno cambiario</option></select></label>`:''}${c.shockId==='ied'?`<label>Ruta económica<select id="route-input"><option value="cambiario" ${c.routeMode!=='dual'?'selected':''}>Inicio cambiario · ruta presentada</option><option value="dual" ${c.routeMode==='dual'?'selected':''}>Dos inicios: inversión nacional y O$</option></select></label>${c.routeMode==='dual'?`<label>Supuesto del efecto neto<select id="dual-input"><option value="exchange" ${c.dualChoice!=='investment'?'selected':''}>Predomina retorno cambiario</option><option value="investment" ${c.dualChoice==='investment'?'selected':''}>Predomina I nacional</option></select></label>`:''}`:''}</div><div class="control-options"><label class="toggle"><input id="second-input" type="checkbox" ${c.showSecond?'checked':''}/> Segundo orden</label><label class="toggle"><input id="is-input" type="checkbox" ${c.showIS?'checked':''}/> Modelo IS–LM–BP</label><span class="always-market">Los cuatro mercados integrados</span><label class="toggle"><input id="explain-input" type="checkbox" ${c.showExplanation?'checked':''}/> Explicaciones completas</label><label class="toggle"><input id="policy-input" type="checkbox" ${c.showPolicyMap?'checked':''}/> Diagnóstico de política económica</label>${btn('+ Variable personalizada','custom-shock','outline small')}</div></div>`;
+  const controls=c=>`<div class="controlpanel"><div class="control-main"><label>Enunciado / título<input id="title-input" value="${esc(c.title)}" spellcheck="true"/></label><label>Variable explicativa<select id="shock-input">${Object.entries(MS.MARKETS).map(([market,title])=>`<optgroup label="${esc(title)}">${allShocks().filter(s=>s.market===market).map(s=>`<option value="${esc(s.id)}" ${c.shockId===s.id?'selected':''}>${esc(s.label)}</option>`).join('')}</optgroup>`).join('')}</select></label><label>Variación inicial${c.shockId==='tecnologia_sust'?'<small class="source-direction">El enunciado ya establece la sustitución laboral: DL disminuye.</small>':''}<select id="direction-input" ${c.shockId==='tecnologia_sust'?'disabled':''}><option value="1" ${c.direction>0?'selected':''}>${c.shockId==='tecnologia_sust'?'Sustituye mano de obra → DL ↓':'Aumenta ↑'}</option>${c.shockId==='tecnologia_sust'?'':`<option value="-1" ${c.direction<0?'selected':''}>Disminuye ↓</option>`}</select></label>${['exportaciones','importaciones','ingreso_socios'].includes(c.shockId)?`<label>Predominio entre dos vías<select id="trade-input"><option value="autonomous" ${c.tradeChoice!=='exchange'?'selected':''}>Predomina cambio comercial inicial</option><option value="exchange" ${c.tradeChoice==='exchange'?'selected':''}>Predomina retorno cambiario</option></select></label>`:''}${c.shockId==='ied'?`<label>Ruta económica<select id="route-input"><option value="cambiario" ${c.routeMode!=='dual'?'selected':''}>Inicio cambiario · ruta presentada</option><option value="dual" ${c.routeMode==='dual'?'selected':''}>Dos inicios: inversión nacional y O$</option></select></label>${c.routeMode==='dual'?`<label>Supuesto del efecto neto<select id="dual-input"><option value="exchange" ${c.dualChoice!=='investment'?'selected':''}>Predomina retorno cambiario</option><option value="investment" ${c.dualChoice==='investment'?'selected':''}>Predomina I nacional</option></select></label>`:''}`:''}</div><div class="control-options"><label class="toggle"><input id="second-input" type="checkbox" ${c.showSecond?'checked':''}/> Segundo orden</label><label class="toggle"><input id="is-input" type="checkbox" ${c.showIS?'checked':''}/> Modelo IS–LM–BP</label><label class="toggle"><input id="explain-input" type="checkbox" ${c.showExplanation?'checked':''}/> Explicaciones completas</label><label class="toggle"><input id="policy-input" type="checkbox" ${c.showPolicyMap?'checked':''}/> Diagnóstico de política económica</label>${btn('+ Variable personalizada','custom-shock','outline small')}</div></div>`;
   function balanceSelector(c){const r=analyze(c);if(!c.showSecond||!r.balance?.applicable||c.shockId==='ied'&&c.routeMode==='dual'||['exportaciones','importaciones','ingreso_socios'].includes(c.shockId))return '';
     const b=r.balance;return `<section class="balance-choice" aria-label="Alternativa de segundo orden"><div class="balance-copy"><div class="eyebrow">DECISIÓN DEL EJERCICIO · SECUENCIA ${b.stage}</div><h3>¿Cuál efecto contrapuesto predomina?</h3><p><b>Consumo (C) ${sign(b.channels[0].sign)}</b> por salarios y <b>Inversión (I) ${sign(b.channels[1].sign)}</b> por tasa de interés. ${b.channels[2]?`Además, el tipo de cambio modifica X − M (${sign(b.channels[2].sign)}).`:''} Se desarrolla el canal que predomina en el resultado neto.</p></div><fieldset class="balance-radio"><legend>Resultado para continuar el segundo orden</legend><label class="balance-option ${c.balanceChoice==='consumption'?'chosen':''}"><input type="radio" name="balanceChoice" value="consumption" ${c.balanceChoice==='consumption'?'checked':''}/><span><b>Predomina consumo (C)</b><small>DA ${sign(b.channels[0].sign)} · recálculo de efectos posteriores</small></span></label><label class="balance-option ${c.balanceChoice==='investment'?'chosen':''}"><input type="radio" name="balanceChoice" value="investment" ${c.balanceChoice==='investment'?'checked':''}/><span><b>Predomina inversión (I)</b><small>DA ${sign(b.channels[1].sign)} · recálculo de efectos posteriores</small></span></label>${b.channels[2]?`<label class="balance-option ${c.balanceChoice==='exchange'?'chosen':''}"><input type="radio" name="balanceChoice" value="exchange" ${c.balanceChoice==='exchange'?'checked':''}/><span><b>Predominan exportaciones netas (X − M)</b><small>DA ${sign(b.channels[2].sign)} · se recalculan los efectos posteriores</small></span></label>`:''}</fieldset></section>`;}
   function topbar(){return `<header class="topbar"><div class="identity"><div class="logomark">M<span>Σ</span></div><div><strong>MACRO STUDIO</strong><small>Simulador gráfico · laboratorio de casos</small></div></div><div class="toptools">${btn('Banco de ejercicios','bank','outline')}${btn('Nueva colección','new-pres','outline')}${btn('Nuevo caso','new-case','outline')}${btn('Modo exposición','present','primary')}${btn('Guardar JSON','export-json','outline')}${btn('Importar JSON','import-json','outline')}${btn('Exportar HTML','export-html','outline')}</div></header>`}
@@ -1056,7 +1134,7 @@ MS.analyze=analyze;
       t=c.overrides?.['is:0:0']??t;
       return `<div class="narrative"><div class="narrative-header"><strong>MODELO IS</strong><span>Interpretación</span></div><div class="paragraphs"><div class="paragraph"><span class="para-n">1</span><p>${markVars(t,r)}</p></div></div></div>`;
     }
-    return paragraphsFor(c,r,m).map(sec=>`<div class="narrative ${sec.event.round==='segundo'?'narrative-second':''}"><div class="narrative-header"><strong>${sec.event.round==='segundo'?'EFECTO DE SEGUNDO ORDEN':'EFECTO DE PRIMER ORDEN'}</strong><div><span class="small-stage">SECUENCIA ${sec.event.stage}</span></div></div><div class="paragraphs">${sec.paragraphs.map((v,j)=>`<div class="paragraph"><span class="para-n">${j+1}</span><p>${markVars(v,r)}</p></div>`).join('')}</div></div>`).join('');
+    return paragraphsFor(c,r,m).map(sec=>`<div class="narrative ${sec.event.round==='segundo'?'narrative-second':''}"><div class="narrative-header"><strong>${sec.event.round==='segundo'?'EFECTO DE SEGUNDO ORDEN':'EFECTO DE PRIMER ORDEN'}</strong><div><span class="small-stage">SECUENCIA ${sec.event.stage}</span></div></div><div class="paragraphs">${sec.paragraphs.map((v,j)=>`<div class="paragraph"><span class="para-n">${j+1}</span><p>${markVars(v,r)}</p></div>`).join('')}</div>${formulaEffectReference(c,r,m,sec.event)}</div>`).join('');
   }
   const SVG={w:800,h:570,ox:155,oy:452,sx:4.65,sy:3.78};
   const px=x=>SVG.ox+SVG.sx*x,py=y=>SVG.oy-SVG.sy*y;
@@ -1151,6 +1229,18 @@ MS.analyze=analyze;
     // Los números de secuencia están arriba de cada tarjeta; la gráfica mantiene solo E, ejes y curvas.
     chart.push('</svg>');return chart.join('');
   }
+  // El plano IS-LM es una representación ESQUEMÁTICA, no un modelo calibrado.
+  // Un único cálculo alimenta E1/E2, las proyecciones ie/Ye y el resumen de la política.
+  function equilibrioISLMDibujo(z){
+    const a=85,b=11,kI=.66,kL=.66;
+    const isShift=13*(z?.is||0),lmShift=18*(z?.lm||0);
+    const punto=(iS,lS)=>{const u=(a-b+iS+lS)/(kI+kL);return {u,v:a+iS-kI*u};};
+    const e1=punto(0,0),e2=punto(isShift,lmShift);
+    const deltaY=e2.u-e1.u,deltaI=e2.v-e1.v;
+    return {e1,e2,isShift,lmShift,deltaY,deltaI};
+  }
+  function sentidoDibujo(v){return Math.abs(v)<1e-6?'sin variación':v>0?'aumenta':'disminuye';}
+  function indicadorDibujo(v){return Math.abs(v)<1e-6?'↔':v>0?'↑':'↓';}
   function modelISLM(c,r){
     const z=r.islm||{is:0,lm:0,bp:0};
     const w=900,h=565,x0=140,y0=455,sx=5.25,sy=3.9;
@@ -1163,9 +1253,8 @@ MS.analyze=analyze;
     out.push(label(x(48),548,'Y · Producción nacional','#24384b','middle',21),label(x(0),34,'i · Tasa de interés','#24384b','start',20));
     // The final equilibrium E2 follows IS and LM intersection; BP is drawn independently.
     const isB=85, lmB=11, kI=.66,kL=.66,kB=.82;
-    const iShift=13*(z.is||0),lShift=18*(z.lm||0),bpShift=14*(z.bp||0);
-    const eq=(iS,lS)=>{const u=(isB-lmB+iS+lS)/(kI+kL);return {u,v:isB+iS-kI*u}};
-    const e1=eq(0,0),e2=eq(iShift,lShift),bpB=e1.v-kB*e1.u;
+    const {e1,e2,isShift:iShift,lmShift:lShift}=equilibrioISLMDibujo(z);
+    const bpShift=14*(z.bp||0),bpB=e1.v-kB*e1.u;
     // Geometría económica intacta; las etiquetas se posicionan fuera de las curvas
     // con líderes claros, evitando que BP1/BP2/LM1 se encimen.
     const curveLabels=[];
@@ -1211,61 +1300,175 @@ MS.analyze=analyze;
       `IS1 mantiene su posición. ${iOnly?'Aunque I cambia por la tasa de interés, ese movimiento no desplaza IS.':'No se identifica un componente autónomo que la desplace.'}`;
     const p2=z.lm?`La oferta de dinero Ms ${mv(z.lm)} por actuación del BCCR; por ello LM pasa de LM1 a LM2 hacia ${to(z.lm)}.`:'El BCCR no ha modificado Ms. Por tanto, la curva LM1 permanece fija; variaciones de Md modifican la tasa de interés, no constituyen por sí solas un desplazamiento de LM.';
     const p3=z.bp?`BP se desplaza hacia ${to(z.bp)} de BP1 a BP2. ${z.bpReason}`:`BP1 mantiene su posición. ${z.bpReason||'No hay cambio autónomo identificado en el ingreso o salida de divisas.'}`;
-    const p4=z.is||z.lm?`La nueva intersección IS–LM determina E2, con producción Ye2 y tasa de interés ie2 en las proyecciones. La curva BP refleja por separado la condición externa, que no se fuerza artificialmente a pasar por E2.`:
-      'La intersección IS–LM continúa en E1. Las variaciones de equilibrio parcial están representadas en los cuatro mercados anteriores.';
+    const d=equilibrioISLMDibujo(z),[generalY,generalI]=qualitativePolicyEffect(z);
+    const p4=z.is||z.lm?`En la geometría esquemática dibujada, la intersección IS–LM pasa de E1 a E2: Ye2 ${sentidoDibujo(d.deltaY)} frente a Ye1 e ie2 ${sentidoDibujo(d.deltaI)} frente a ie1. Los signos del gráfico resultan de distancias convencionales, no de datos calibrados. Como conclusión cualitativa sin magnitudes observadas: ${generalY}; ${generalI}. La curva BP refleja por separado la condición externa; no se presupone su intersección con E2.`:
+      'La intersección IS–LM continúa en E1 (Ye e ie se mantienen en el dibujo). Los cambios de equilibrio parcial de los cuatro mercados se estudian por separado; no deben confundirse movimientos sobre las curvas con desplazamientos de IS o LM.';
     return [p1,p2,p3,p4];
   }
-  // Biblioteca de relaciones, transcrita de las presentaciones del curso.
-  // f(...) significa dependencia cualitativa, no fórmula con coeficientes estimados.
+  // Formulario articulado con los ejemplos originales de las presentaciones EC-500.
+  // OA=DA solo en el equilibrio; f(...) representa una relación cualitativa,
+  // NO una ecuación estimada con coeficientes del BCCR.
+  function formulaFocus(c,r){
+    const active=r.sequence.filter(e=>(c.showSecond||e.round!=='segundo')&&(formulaStageSelection==='all'||String(e.stage)===formulaStageSelection));
+    const focus=new Map();
+    function add(key,e){if(!key)return;const old=focus.get(key)||[];old.push(e);focus.set(key,old)}
+    for(const e of active){
+      if(e.market==='goods'){
+        ['DA','Y','OA'].forEach(k=>add(k,e));
+        if(e.kind==='i-investment'){['i','I'].forEach(k=>add(k,e));}
+        else if(e.kind==='fx-net'){['TC','X','M','XM'].forEach(k=>add(k,e));}
+        else if(e.kind==='net'){['C','I','X','M','XM','W','Yd','i','TC'].forEach(k=>add(k,e));}
+        else if(e.parents?.some(p=>p.startsWith('labor:'))){['W','Yd','C'].forEach(k=>add(k,e));}
+        else if(e.parents?.some(p=>p.startsWith('fx:'))){['TC','X','M','XM'].forEach(k=>add(k,e));}
+        else if(e.parents?.some(p=>p.startsWith('money:'))){['i','I'].forEach(k=>add(k,e));}
+        else {
+          const q=String(r.shock.variable||r.shock.channel||'').toLowerCase(),id=r.shock.id;
+          if(/\bg\b|gasto|compras|infraestructura|salarios públicos|pensione/.test(q)||['gasto_publico','infra','compras','salarios_publicos','pensiones'].includes(id))add('G',e);
+          if(/consumo|\bc\b|impuestos|transferencias|salario|pmgc|riqueza/.test(q)||['impuestos','transferencias','consumo_aut','pmc','salario_exo'].includes(id))['C','Yd'].forEach(k=>add(k,e));
+          if(id==='impuestos')add('T',e);
+          if(id==='transferencias')add('TR',e);
+          if(id==='consumo_aut')add('Co',e);
+          if(id==='pmc')add('PmgC',e);
+          if(/inversi|\bi\b|credito|crédito|ied|tramitolog/.test(q)||['inversion_aut','credito','tramitologia'].includes(id))add('I',e);
+          if(['exportaciones','ingreso_socios'].includes(id)||/^x$/.test(q))add('X',e);
+          if(id==='importaciones'||/^m$/.test(q))add('M',e);
+          if(id==='tipo_cambio_exo') ['TC','X','M','XM'].forEach(k=>add(k,e));
+        }
+      }
+      if(e.market==='labor'){['W','L',e.curve==='ol'?'OL':'DL'].forEach(k=>add(k,e));if(e.curve==='dl')add('Y',e)}
+      if(e.market==='money'){[e.curve==='ms'?'Ms':'Md','i'].forEach(k=>add(k,e));if(e.curve==='md')add('Y',e)}
+      if(e.market==='fx'){[e.curve==='os'?'O$':'D$','TC'].forEach(k=>add(k,e));if(e.curve==='ds'&&e.kind==='induced'){['Y','M'].forEach(k=>add(k,e));}if(e.curve==='os'&&e.kind==='i-capital') ['i','i*'].forEach(k=>add(k,e));if(e.curve==='os'&&r.shock.id==='ied')add('IED',e);}
+    }
+    return focus;
+  }
   function formulas(c,r){
-    const blocks=[
-      {m:'Bienes y servicios · Y',eq:'DA = C + I + G + X − M',lines:[
-        ['Consumo','C = C₀ + PmgC × Yd; Yd = f(W, impuestos, transferencias, riqueza familiar)'],
-        ['Inversión','I = f(i, acceso al crédito, tramitología, disponibilidad de inversión)'],
-        ['Gasto público','G: compras, salarios públicos, infraestructura, transferencias y otras erogaciones; instrumento fiscal'],
-        ['Exportaciones','X = f(TC, Y*, P, P*)'],
-        ['Importaciones','M = f(TC, Y, P, P*)']
-      ]},
-      {m:'Mercado laboral · W, L',eq:'OL = DL en equilibrio',lines:[
-        ['Oferta laboral','OL = f(migración, educación, capacitación, desastres, PEA)'],
-        ['Demanda laboral','DL = f(Y, tecnología)'],
-        ['Variable de salida','W: salarios; L: empleo de equilibrio']
-      ]},
-      {m:'Mercado monetario · i',eq:'Ms = Md en equilibrio',lines:[
-        ['Oferta monetaria','Ms = f(instrumentos del BCCR: encaje, OMA/BEMs, TPM/redescuento, emisión)'],
-        ['Demanda de dinero','Md = f(Y, transacciones, precaución, especulación, deuda interna)'],
-        ['Variable de salida','i: tasa de interés de equilibrio; más Ms suele reducir i, mayor Md suele elevar i']
-      ]},
-      {m:'Mercado cambiario · TC',eq:'O$ = D$ en equilibrio',lines:[
-        ['Oferta de dólares','O$ = f(exportaciones, turismo receptor, IED, crédito externo, diferencial i − i*)'],
-        ['Demanda de dólares','D$ = f(importaciones, turismo emisor, inversión y préstamos al exterior)'],
-        ['Variable de salida','TC: colones por dólar; O$↑ suele implicar TC↓, y TC↓ favorece M y reduce X bajo los supuestos del curso']
-      ]}
-    ];
-    return `<details class="formula-library"><summary>Formulario económico · relaciones de los cuatro mercados</summary><div class="formula-intro">Estas funciones explican qué variable mueve cada curva. <b>f(…)</b> indica dependencia cualitativa: no se asignan coeficientes no observados. Las expresiones corresponden a las presentaciones de Macroeconomía II del curso.</div><div class="formula-grid">${blocks.map(b=>`<section class="formula-block"><h4>${esc(b.m)}</h4><div class="formula-main">${esc(b.eq)}</div>${b.lines.map(([lab,t])=>`<p><strong>${esc(lab)}:</strong> ${esc(t)}</p>`).join('')}</section>`).join('')}</div><p class="formula-legend">Y: producción; Y*: ingreso de socios comerciales; P y P*: precios nacionales e internacionales; C₀: consumo autónomo; PmgC: propensión marginal a consumir; TC: colones por USD; i*: tasa internacional.</p></details>`;
+    const validStages=[...new Set(r.sequence.filter(e=>c.showSecond||e.round!=='segundo').map(e=>e.stage))];
+    if(formulaStageSelection!=='all'&&!validStages.includes(Number(formulaStageSelection)))formulaStageSelection='all';
+    const focus=formulaFocus(c,r);
+    const tag=(key,label)=>{const ev=focus.get(key)||[],all=ev.map(e=>e.stage),unique=[...new Set(all)].sort((a,b)=>a-b),labelStr=unique.join(', ');
+      const cls=!ev.length?'':ev.every(e=>e.round==='segundo')?' formula-hit second':' formula-hit first';
+      const title=ev.length?` title="Afectado en la secuencia ${esc(labelStr)}"`:'';
+      return `<strong class="formula-term${cls}"${title}>${esc(label)}</strong>`;};
+    const row=(title,eq,body,sub='')=>`<div class="formula-row"><div class="formula-row-title">${title}</div><div class="formula-equation">${eq}</div>${body?`<p>${body}</p>`:''}${sub}</div>`;
+    const sub=(title,content)=>`<details class="formula-nested" open><summary>${title}</summary><div class="formula-nested-content">${content}</div></details>`;
+    const goods=`<section class="formula-block" data-formula-market="goods"><h4>Bienes y servicios <span>(Y)</span></h4>
+      ${row('Identidad del producto / gasto',`${tag('Y','Y')} ≡ ${tag('C','C')} + ${tag('I','I')} + ${tag('G','G')} + ${tag('X','X')} − ${tag('M','M')}`,'El símbolo ≡ expresa una identidad contable de producción medida por el gasto.')}
+      ${row('Demanda agregada',`${tag('DA','DA')} = ${tag('C','C')} + ${tag('I','I')} + ${tag('G','G')} + ${tag('X','X')} − ${tag('M','M')}`,'C: familias · I: empresas · G: Gobierno · X: exportaciones · M: importaciones.')}
+      ${row('Oferta y condición de equilibrio',`${tag('OA','OA')}(${tag('Y','Y')}) = ${tag('DA','DA')}(${tag('Y','Y')}) <small>solo en el equilibrio</small>`,'OA es el valor de la producción ofrecida y Y representa la producción o ingreso nacional. A diferencia de la identidad del PIB, OA = DA es una condición de equilibrio: fuera de él existen excedentes, inventarios y ajustes.')}
+      ${row('C · Consumo de las familias',`${tag('C','C')} = ${tag('Co','C₀')} + ${tag('PmgC','PmgC')} × ${tag('Yd','Yd')}`,'C₀: consumo autónomo; PmgC: propensión marginal a consumir; Yd: ingreso disponible.',
+        sub('Descomposición de ingreso disponible (Yd)',`${tag('Yd','Yd')} = f(${tag('W','W')}, ${tag('T','impuestos')}, ${tag('TR','transferencias')}, ${tag('R','riqueza familiar')})<p>W: salarios del mercado laboral; impuestos: reducen el ingreso disponible ceteris paribus; transferencias: lo incrementan; riqueza: otro determinante indicado en las diapositivas. En las láminas Ronney lo presenta como función cualitativa, sin coeficientes numéricos ni una igualdad contable adicional para Yd. En un enfoque general, el ingreso disponible se entiende como ingreso después de impuestos netos de transferencias, pero esta formulación no sustituye la relación usada en clase.</p>`))}
+      ${row('I · Inversión de las empresas',`${tag('I','I')} = f(${tag('i','i')}, acceso al crédito, tramitología, restricciones, acceso a IED)`,'i: tasa de interés nacional. En el ejercicio, i ↑ suele reducir I; i ↓ suele aumentar I. El acceso al crédito y las barreras de inversión también influyen. La IED solo afecta I nacional si se declara ese supuesto. El rótulo Pmi aparece en algunas láminas sin desarrollo algebraico adicional.')}
+      ${row('G · Gasto del Gobierno (política fiscal)',`${tag('G','G')} : compras de bienes y servicios + obras de infraestructura + servicios públicos`,'En el lenguaje docente, G corresponde al gasto gubernamental. Sus presentaciones también enumeran salarios públicos, pensiones, transferencias e intereses. Para el cálculo contable del PIB se separan las compras finales del Gobierno de las transferencias y de los pagos de intereses, que no son nuevas compras finales.',sub('Desglose según las láminas del profesor',`Compras públicas · infraestructura · salarios de servicios públicos · pensiones · transferencias · intereses de deuda. <p>Las transferencias a los hogares afectan principalmente <b>Yd → C</b>; si se contabilizan directamente en G y también en C, se corre el riesgo de duplicar su efecto dentro del gasto agregado.</p>`))}
+      ${row('Impuestos · instrumento de política fiscal',`${tag('T','T')} → ${tag('Yd','Yd')} → ${tag('C','C')}`,'Los impuestos son ingresos del Gobierno; una mayor recaudación por T no constituye automáticamente un aumento de G. En los ejercicios, T↑ reduce Yd y C ceteris paribus.')}
+      ${row('X · Exportaciones',`${tag('X','X')} = f(${tag('TC','TC')}, ${tag('Y*','Y*')}, ${tag('P','P')}, ${tag('P*','P*')})`,'TC: tipo de cambio (colones/USD); Y*: ingreso de socios comerciales; P: precios nacionales; P*: precios internacionales. TC↓ tiende a reducir X, según el ejercicio docente.')}
+      ${row('M · Importaciones',`${tag('M','M')} = f(${tag('TC','TC')}, ${tag('Y','Y')}, ${tag('P','P')}, ${tag('P*','P*')})`,'Y: producción o ingreso nacional. TC↓ abarata bienes externos y tiende a incrementar M; Y↑ puede aumentar M. Las importaciones elevan la demanda de dólares (D$).')}
+      ${row('Exportaciones netas',`${tag('XM','X − M')} = ${tag('X','X')} − ${tag('M','M')}`,'Cuando M aumenta manteniéndose X constante, X−M disminuye y ejerce presión a la baja sobre DA.')}
+    </section>`;
+    const labor=`<section class="formula-block" data-formula-market="labor"><h4>Mercado laboral <span>(W, L)</span></h4>
+      ${row('Condición de equilibrio',`${tag('OL','OL')} = ${tag('DL','DL')}`,'La igualdad ocurre en el salario y empleo de equilibrio; fuera de él existe exceso de oferta o demanda de trabajo.')}
+      ${row('Oferta laboral',`${tag('OL','OL')} = f(migración, educación, capacitación, desastres naturales, PEA)`,'Desplazan OL la inmigración laboral, disponibilidad de trabajadores capacitados, desastres y participación de la fuerza laboral (PEA).')}
+      ${row('Demanda laboral',`${tag('DL','DL')} = f(${tag('Y','Y')}, tecnología, tipo de trabajo)`,'La producción nacional Y es un determinante de la demanda de trabajo; la tecnología puede aumentar o disminuir DL según si complementa o sustituye mano de obra.')}
+      ${row('Variables de resultado',`${tag('W','W')}: salario &nbsp; · &nbsp; ${tag('L','L')}: empleo`,'El salario W afecta el ingreso disponible de las familias (Yd) y, en una secuencia posterior, el consumo C.')}
+    </section>`;
+    const money=`<section class="formula-block" data-formula-market="money"><h4>Mercado monetario <span>(i)</span></h4>
+      ${row('Condición de equilibrio',`${tag('Ms','Ms')} = ${tag('Md','Md')}`,'La igualdad corresponde a la tasa de interés de equilibrio (i). Un cambio en Md no implica automáticamente un cambio de Ms ni un desplazamiento LM.')}
+      ${row('Oferta monetaria del BCCR',`${tag('Ms','Ms')} = f(EML, OMA, BEMs, redescuento / TPM, emisión monetaria)`,'Instrumentos: encaje mínimo legal (EML), operaciones de mercado abierto (OMA), compra/venta de BEMs, tasa de política monetaria (TPM) y emisión. En el ejemplo del curso, EML↓, compra de BEMs por el BCCR o mayor emisión elevan Ms.')}
+      ${row('Demanda de dinero',`${tag('Md','Md')} = f(${tag('Y','Y')}, deuda interna, transacciones, precaución, especulación)`,'Y↑ eleva Md para transacciones; deuda interna es otro determinante destacado. La tasa i afecta la cantidad demandada y la preferencia especulativa: no se debe tratar cada variación de i como desplazamiento de Md.')}
+      ${row('Resultado del mercado',`${tag('i','i')} = tasa de interés nacional`,'A Ms constante, Md↑ presiona i al alza; con Md constante, Ms↑ presiona i a la baja. Se distinguen movimientos de curvas y movimientos a lo largo de curvas.')}
+    </section>`;
+    const fx=`<section class="formula-block" data-formula-market="fx"><h4>Mercado cambiario <span>(TC)</span></h4>
+      ${row('Equilibrio de divisas',`${tag('O$','O$')} = ${tag('D$','D$')}`,'El tipo de cambio TC expresa colones por dólar estadounidense. O$↑ con D$ fija suele bajar TC; D$↑ con O$ fija suele elevar TC.')}
+      ${row('Oferta de dólares · entrada de divisas',`${tag('O$','O$')} = f(${tag('X','X')}, turismo hacia Costa Rica, ${tag('IED','IED')}, préstamos externos, deuda externa, ${tag('i','i')} − ${tag('i*','i*')})`,'Exportaciones, turismo receptor, inversión extranjera directa, préstamos desde el exterior y diferencial entre tasas nacional e internacional (i−i*) generan ingresos de dólares según los supuestos del curso.')}
+      ${row('Demanda de dólares · salida de divisas',`${tag('D$','D$')} = f(${tag('M','M')}, turismo fuera del país, inversión de residentes en el exterior, préstamos al exterior)`,'Las importaciones y los pagos hacia el extranjero generan demanda de dólares. Y↑ puede elevar M y por ese canal D$.')}
+      ${row('Tipo de cambio y exportaciones netas',`${tag('TC','TC')} → ${tag('X','X')}, ${tag('M','M')} → ${tag('XM','X − M')} → ${tag('DA','DA')}`,'TC↓ suele favorecer M y perjudicar X; TC↑ suele favorecer X y desincentivar M, manteniendo constantes otros factores.')}
+    </section>`;
+    const islm=`<section class="formula-block formula-combined" data-formula-market="is"><h4>Modelo IS–LM–BP <span>(i, Y)</span></h4>
+      ${row('Condición del mercado de bienes · IS',`${tag('Y','Y')} = ${tag('C','C')}(${tag('Yd','Yd')}) + ${tag('I','I')}(${tag('i','i')}) + ${tag('G','G')} + ${tag('X','X')}(${tag('TC','TC')}, ${tag('Y*','Y*')}, ${tag('P','P')}, ${tag('P*','P*')}) − ${tag('M','M')}(${tag('TC','TC')}, ${tag('Y','Y')}, ${tag('P','P')}, ${tag('P*','P*')})`,'Forma funcional compuesta a partir de las relaciones de las láminas; no es una ecuación empírica estimada. En la convención del profesor, los cambios autónomos de DA desplazan IS. Un movimiento de i por sí solo no desplaza IS.')}
+      ${row('Condición del mercado monetario · LM',`${tag('Ms','Ms')} = ${tag('Md','Md')}(${tag('Y','Y')}, ${tag('i','i')}, deuda interna)`,'LM cambia de posición cuando el BCCR modifica Ms; los cambios de demanda de dinero y de tasa de interés por sí solos no equivalen a desplazar LM.')}
+      ${row('Balanza de pagos · BP',`SBP = XN(${tag('Y','Y')}, ${tag('Y*','Y*')}, ${tag('P','P')}, ${tag('P*','P*')}, ${tag('TC','TC')}) + FC(${tag('i','i')} − ${tag('i*','i*')})`,'Estructura presentada en las diapositivas cambiarias: exportaciones netas (XN) y flujos de capital (FC). El equilibrio externo se expresa como SBP = 0. Los ingresos autónomos de divisas desplazan BP a la izquierda y las salidas a la derecha según el convenio gráfico del profesor.')}
+    </section>`;
+    const stages=[...new Set(r.sequence.filter(e=>c.showSecond||e.round!=='segundo').map(e=>e.stage))].sort((a,b)=>a-b);
+    const selector=`<label class="formula-step-label" for="formula-stage-input">Resaltar componentes por secuencia <select id="formula-stage-input"><option value="all"${formulaStageSelection==='all'?' selected':''}>Todas las secuencias</option>${stages.map(n=>`<option value="${n}"${formulaStageSelection===String(n)?' selected':''}>Secuencia ${n}</option>`).join('')}</select></label>`;
+    return `<details class="formula-library"${formulaLibraryOpened?' open':''}><summary>Formulario económico completo · ecuaciones, componentes y variables afectadas</summary><div class="formula-intro">Fórmulas del curso EC-500 organizadas por mercado. <b>Las variables en azul o rosado son las que intervienen en la secuencia seleccionada:</b> azul = primer orden, rosado = segundo orden. Las expresiones con <b>f(…)</b> indican dependencia cualitativa; no se inventan parámetros. Y es la producción o el ingreso nacional; no es la tasa de interés. La identidad del gasto y la condición OA = DA no son la misma ecuación.</div><div class="formula-controls">${selector}<span class="formula-pill"><i class="dot first"></i> Primer orden</span><span class="formula-pill"><i class="dot second"></i> Segundo orden</span></div><div class="formula-grid">${goods}${labor}${money}${fx}${islm}</div><p class="formula-legend">Abre el detalle de ingreso disponible (Yd) para ver salarios, impuestos, transferencias y riqueza; las ecuaciones de las demás funciones incluyen también sus determinantes. Se preservan las convenciones de la asignatura y se indica la distinción contable cuando corresponde.</p></details>`;
+  }
+  // Relación económica específica del párrafo, sin introducir conexiones simultáneas 3→3.
+  function formulaEffectReference(c,r,m,e){
+    const sp=s=>`<strong class="formula-affect">${s}</strong>`;
+    let phrase='';
+    if(m==='goods'){
+      if(e.kind==='i-investment')phrase=`${sp('i')} → ${sp('I')} = f(i, acceso al crédito, restricciones) → DA = C + ${sp('I')} + G + X − M`;
+      else if(e.kind==='fx-net')phrase=`${sp('TC')} → ${sp('X')} = f(TC, Y*, P, P*) y ${sp('M')} = f(TC, Y, P, P*) → ${sp('X − M')} → DA`;
+      else if(e.kind==='net')phrase=`C = C₀ + PmgC × ${sp('Yd')}; I = f(${sp('i')}, …); X/M = f(${sp('TC')}, …) → ${sp('DA')}. El resultado sigue el predominio seleccionado.`;
+      else if(r.shock.id==='impuestos'&&e.stage===1)phrase=`${sp('Impuestos')} → ${sp('Yd')} = f(W, impuestos, transferencias, riqueza) → ${sp('C')} = C₀ + PmgC × Yd → DA`;
+      else if(e.stage===1&&r.shock.market==='goods'){
+        const variable=r.shock.variable||'';
+        phrase=`Variable inicial: ${sp(esc(variable||r.shock.label))} → DA = C + I + G + X − M`;
+      }else if(e.parents?.some(x=>x.startsWith('labor:')))phrase=`${sp('W')} → ${sp('Yd')} = f(W, impuestos, transferencias, riqueza) → ${sp('C')} = C₀ + PmgC × Yd → DA`;
+      else phrase=`DA = C + I + G + X − M. Variable modificada: ${sp('DA')}`;
+    }else if(m==='labor')phrase=e.curve==='ol'?`${sp('OL')} = f(migración, educación, capacitación, desastres, PEA) → ${sp('W')}, ${sp('L')}`:`${sp('Y')} → ${sp('DL')} = f(Y, tecnología) → ${sp('W')}, ${sp('L')}`;
+    else if(m==='money')phrase=e.curve==='ms'?`${sp('Ms')} = f(EML, OMA, BEMs, TPM, emisión monetaria) → ${sp('i')}`:`${sp('Y')} → ${sp('Md')} = f(Y, deuda interna, transacciones, precaución, especulación) → ${sp('i')}`;
+    else if(m==='fx')phrase=e.curve==='os'?`${sp('O$')} = f(X, turismo receptor, IED, crédito externo, i−i*) → ${sp('TC')}`:`${sp('D$')} = f(M, turismo emisor, inversión exterior, préstamos) → ${sp('TC')}`;
+    if(!phrase)return '';
+    return `<details class="formula-in-narrative"><summary>Consultar fundamento económico · secuencia ${e.stage}</summary><div class="formula-inline-body">${phrase}</div><small>La relación explica el mecanismo de este efecto; no agrega un paso a la secuencia ni desplaza curvas por sí sola.</small></details>`;
   }
   // Diagnóstico del plano IS–LM–BP. Separa condición inicial de política aplicada.
   // Las coordenadas son ilustrativas, sin calibración macroeconómica del país.
   const policySamples=[
-    {id:'A',Y:42,i:77,policy:'expansion_monetaria',dir:1,title:'Política monetaria expansiva',body:'Ms ↑ mediante instrumentos del BCCR → presión inicial a reducir i. Ejercicio del grupo 1.'},
-    {id:'B',Y:42,i:54,policy:'gasto_publico',dir:1,title:'Política fiscal expansiva',body:'G ↑ → DA ↑ y desplazamiento de IS. Ejercicio del grupo 2.'},
-    {id:'C',Y:72,i:18,policy:'contraccion_monetaria',dir:1,title:'Política monetaria restrictiva',body:'Ms ↓ mediante instrumentos del BCCR → presión inicial a elevar i. Ejercicio del grupo 5.'}
+    {id:'exceso-liquidez',number:'1',Y:42,i:77,policy:'expansion_monetaria',dir:1,title:'Bajar la tasa de interés',measure:'Política monetaria expansiva',body:'El BCCR incrementa Ms. La presión inicial es i ↓; luego se estudian I, O$, TC, C y X−M con sus secuencias.'},
+    {id:'impulso-productivo',number:'2',Y:42,i:54,policy:'gasto_publico',dir:1,title:'Aumentar la producción',measure:'Política fiscal expansiva',body:'El Gobierno incrementa sus compras o inversión pública G. La DA aumenta y el análisis continúa por los demás mercados.'},
+    {id:'presion-tasa',number:'3',Y:72,i:18,policy:'contraccion_monetaria',dir:1,title:'Elevar la tasa de interés',measure:'Política monetaria restrictiva',body:'El BCCR reduce Ms. La presión inicial es i ↑. Es necesario analizar el efecto sobre inversión, producción y divisas.'},
+    {id:'reduccion-productiva',number:'4',Y:72,i:48,policy:'gasto_publico',dir:-1,title:'Reducir la producción',measure:'Política fiscal restrictiva',body:'Se ensaya una reducción de G para desplazar DA e IS a la izquierda. La reducción de G disminuye DA e IS; examiná también el mercado monetario y el sector externo antes de decidir.'}
   ];
+  const policySlopes={is:y=>85-.66*y,lm:y=>11+.66*y,bp:y=>-10.8+1.05*y};
   function policyDiagnostic(p){
-    const IS=85-.66*p.Y,LM=11+.66*p.Y,BP=-10.8+1.05*p.Y;
-    const goods=p.i<IS?'Exceso de demanda agregada (DA)':'Exceso de oferta agregada (OA)';
-    const money=p.i<LM?'Exceso de demanda de dinero (Md)':'Exceso de oferta de dinero (Ms)';
-    const dollars=p.i<BP?'Exceso de demanda de dólares (D$)':'Exceso de oferta de dólares (O$)';
+    const IS=policySlopes.is(p.Y),LM=policySlopes.lm(p.Y),BP=policySlopes.bp(p.Y);
+    const goods=p.i<IS?'Exceso de demanda agregada (DA > OA)':'Exceso de oferta agregada (OA > DA)';
+    const money=p.i<LM?'Exceso de demanda de dinero (Md > Ms)':'Exceso de oferta de dinero (Ms > Md)';
+    const dollars=p.i<BP?'Exceso de demanda de dólares (D$ > O$)':'Exceso de oferta de dólares (O$ > D$)';
     const sample=policySamples.find(s=>Math.hypot(s.Y-p.Y,s.i-p.i)<.2);
-    return {goods,money,dollars,sample};
+    const zone=(p.i<IS?'da':'oa')+'-'+(p.i<LM?'md':'ms');
+    return {goods,money,dollars,sample,zone};
   }
-  function policyMap(c){
+  function qualitativePolicyEffect(z){
+    const is=z?.is||0,lm=z?.lm||0;
+    if(is>0&&!lm)return ['Y ↑','i ↑','IS se desplaza a la derecha; LM conserva su lugar'];
+    if(is<0&&!lm)return ['Y ↓','i ↓','IS se desplaza a la izquierda; LM conserva su lugar'];
+    if(lm>0&&!is)return ['Y ↑','i ↓','LM se desplaza a la derecha; IS conserva su lugar'];
+    if(lm<0&&!is)return ['Y ↓','i ↑','LM se desplaza a la izquierda; IS conserva su lugar'];
+    if(!is&&!lm)return ['Y sin cambio por IS–LM','i sin cambio por IS–LM','IS y LM conservan sus posiciones'];
+    if(is>0&&lm>0)return ['Y ↑','i indeterminada','IS y LM se desplazan a la derecha. Ambas impulsan Y, pero presionan i en sentidos opuestos'];
+    if(is<0&&lm<0)return ['Y ↓','i indeterminada','IS y LM se desplazan a la izquierda. Ambas reducen Y, pero presionan i en sentidos opuestos'];
+    if(is>0&&lm<0)return ['Y indeterminada','i ↑','IS a la derecha y LM a la izquierda elevan i, pero tienen efectos opuestos en Y'];
+    if(is<0&&lm>0)return ['Y indeterminada','i ↓','IS a la izquierda y LM a la derecha reducen i, pero tienen efectos opuestos en Y'];
+    return ['Y dependiente de magnitudes','i dependiente de magnitudes','Las curvas cambian de manera simultánea y requieren hipótesis de magnitud para concluir el saldo neto'];
+  }
+  function policyTransition(c,r){
+    if(!c.showPolicyMap||!c.diagnosticPreset)return '';
+    const d=policySamples.find(x=>x.id===c.diagnosticPreset);
+    if(!d)return '';
+    const z=r.islm||{},dir=v=>v>0?'derecha':v<0?'izquierda':'posición inicial';
+    const [yGeneral,iGeneral,note]=qualitativePolicyEffect(z);
+    const dib=equilibrioISLMDibujo(z);
+    const y=`Y ${indicadorDibujo(dib.deltaY)} · ${sentidoDibujo(dib.deltaY)} en E2`;
+    const i=`i ${indicadorDibujo(dib.deltaI)} · ${sentidoDibujo(dib.deltaI)} en E2`;
+    const primerImpacto=d.policy==='gasto_publico'
+      ?`Impacto inicial de la política: G ${d.dir>0?'↑':'↓'} → DA ${d.dir>0?'↑':'↓'} → Y ${d.dir>0?'↑':'↓'}.`
+      :`Impacto inicial de la política: Ms ${d.policy==='expansion_monetaria'?'↑':'↓'} → i ${d.policy==='expansion_monetaria'?'↓':'↑'}.`;
+    return `<section class="policy-outcome" aria-label="Conciliación del diagnóstico con el modelo del escenario"><div class="policy-outcome-kicker">DEL DIAGNÓSTICO AL ESCENARIO SIMULADO</div><h4>${esc(d.measure)}</h4><p>Se modifica <b>${esc(MS.CATALOG.find(x=>x.id===c.shockId)?.label||c.shockId)}</b> en dirección ${c.direction>0?'↑':'↓'}. <b>${esc(primerImpacto)}</b> La intersección E1 → E2 de IS–LM representa el resultado del dibujo del ejercicio; el punto inicial del diagnóstico es una ubicación ilustrativa independiente, no un dato observado.</p><div class="policy-outcome-grid"><div><span>Producción en el gráfico</span><b>${esc(y)}</b></div><div><span>Tasa de interés en el gráfico</span><b>${esc(i)}</b></div><div><span>Desplazamiento de curvas</span><b>IS ${esc(dir(z.is))} · LM ${esc(dir(z.lm))} · BP ${esc(dir(z.bp))}</b></div></div><p><b>Inferencia cualitativa sin magnitudes:</b> ${esc(yGeneral)}; ${esc(iGeneral)}. ${esc(note)}. Las distancias del gráfico son parámetros convencionales para ilustrar el mecanismo, no elasticidades estimadas. Los cambios laborales y cambiarios deben comprobarse en sus propias gráficas; BP no garantiza equilibrio externo automático.</p><small>El diagnóstico orienta una intervención posible, pero no garantiza eliminar simultáneamente los tres excesos iniciales.</small></section>`;
+  }
+  function policyMap(c,r){
     const p=diagnosticPoint,d=policyDiagnostic(p);
     const ox=98,oy=365,sx=5.7,sy=3.25;
     const X=v=>ox+sx*v,Y=v=>oy-sy*v;
     const line=(x1,y1,x2,y2,color)=>`<line x1="${X(x1)}" y1="${Y(y1)}" x2="${X(x2)}" y2="${Y(y2)}" stroke="${color}" stroke-width="3" stroke-linecap="round"/>`;
-    const pins=policySamples.map(s=>`<g class="policy-pin ${d.sample?.id===s.id?'active':''}" data-act="diag-sample" data-id="${s.id}" tabindex="0" role="button" aria-label="Seleccionar diagnóstico ${s.id}"><circle cx="${X(s.Y)}" cy="${Y(s.i)}" r="13"/><text x="${X(s.Y)}" y="${Y(s.i)+4}" text-anchor="middle">${s.id}</text></g>`).join('');
-    return `<section class="policy-panel"><div class="policy-heading"><div class="market-eyebrow">ANTES DE LA INTERVENCIÓN · DIAGNÓSTICO OPCIONAL</div><h3>¿Dónde está la economía en el plano IS–LM–BP?</h3><p>Elegí uno de los tres casos de la clase o tocá cualquier punto del plano para identificar los excesos. Esta vista es un <b>diagnóstico inicial ilustrativo</b>, no el equilibrio final del escenario.</p></div><div class="policy-layout"><div class="policy-graph"><svg class="policy-svg" viewBox="0 0 760 420" role="img" aria-label="Mapa de exceso de oferta y demanda entre las curvas IS, LM y BP; seleccioná un punto" data-diag-plot="1"><line x1="${X(0)}" y1="${Y(0)}" x2="${X(105)}" y2="${Y(0)}" stroke="#30485b" stroke-width="2.5"/><line x1="${X(0)}" y1="${Y(0)}" x2="${X(0)}" y2="${Y(105)}" stroke="#30485b" stroke-width="2.5"/>${line(10,85-.66*10,100,85-.66*100,'#1879b9')}${line(10,11+.66*10,100,11+.66*100,'#c93e85')}${line(10,-10.8+1.05*10,100,-10.8+1.05*100,'#0b8d76')}<text x="${X(100)}" y="${Y(85-.66*100)-10}" class="policy-curve" fill="#1879b9">IS</text><text x="${X(102)}" y="${Y(11+.66*102)-10}" class="policy-curve" fill="#c93e85">LM</text><text x="${X(89)}" y="${Y(-10.8+1.05*89)-12}" class="policy-curve" fill="#0b8d76">BP</text><text x="${X(108)}" y="${Y(0)+20}" fill="#415e73" text-anchor="end" font-size="15">Y · Producción</text><text x="${X(0)}" y="${Y(107)}" font-size="15" fill="#415e73">i · Tasa de interés</text><circle cx="${X(56)}" cy="${Y(48)}" r="4" fill="#233b50"/><text x="${X(56)+12}" y="${Y(48)-9}" fill="#233b50" font-size="15">E</text>${pins}<circle cx="${X(p.Y)}" cy="${Y(p.i)}" r="18" fill="none" stroke="#efaa23" stroke-width="2.8" stroke-dasharray="5 3" pointer-events="none"/></svg><p class="policy-chart-note">Plano esquemático: las distancias no representan magnitudes observadas ni garantizan que una intervención resuelva todos los excesos.</p></div><div class="policy-reading"><div class="policy-choices">${policySamples.map(s=>`<button type="button" class="button ${d.sample?.id===s.id?'primary':'outline'} small" data-act="diag-sample" data-id="${s.id}">Caso ${s.id}</button>`).join('')}</div><h4>Desequilibrios identificados</h4><p><b>Bienes:</b> ${d.goods}</p><p><b>Dinero:</b> ${d.money}</p><p><b>Divisas:</b> ${d.dollars}</p><div class="policy-recommendation"><strong>${d.sample?d.sample.title:'Sin intervención única prevalidada'}</strong><p>${d.sample?d.sample.body:'Para este punto libre, las presentaciones no establecen una política única. Contrastá los tres excesos antes de escoger una medida fiscal, monetaria o combinada.'}</p></div>${d.sample?`<button type="button" class="button primary" data-act="diag-apply" data-id="${d.sample.id}">Aplicar ${d.sample.id} y resolver los cuatro mercados</button>`:''}<small class="policy-note">La medida sugerida es un punto de partida docente, no una garantía de equilibrio general. El gráfico IS–LM–BP del caso se recalcula debajo.</small></div></div></section>`;
+    const pins=policySamples.map(s=>`<g class="policy-pin ${d.sample?.id===s.id?'active':''}" data-act="diag-sample" data-id="${s.id}" tabindex="0" role="button" aria-label="Seleccionar escenario ilustrativo ${s.number}: ${esc(s.measure)}"><circle cx="${X(s.Y)}" cy="${Y(s.i)}" r="13"/><text x="${X(s.Y)}" y="${Y(s.i)+4}" text-anchor="middle">${s.number}</text></g>`).join('');
+    const [currentY,currentI]=qualitativePolicyEffect(r.islm);
+    const advice=d.sample?`<b>Dirección buscada:</b> ${esc(d.sample.title)}. <b>Instrumento:</b> ${esc(d.sample.measure)}.`:'Para este punto libre no hay una política única predeterminada: analizá las tres condiciones antes de escoger una intervención fiscal o monetaria.';
+    const scenarios=policySamples.map(s=>`<button type="button" class="policy-preset ${d.sample?.id===s.id?'active':''}" data-act="diag-sample" data-id="${s.id}"><b>${s.number}</b><span>${esc(s.title)}<small>${esc(s.measure)}</small></span></button>`).join('');
+    return `<section class="policy-panel"><div class="policy-heading"><div class="market-eyebrow">SITUACIÓN INICIAL · ANÁLISIS OPCIONAL</div><h3>Diagnóstico y selección de una política económica</h3><p>Primero identificá <b>la dirección necesaria en producción (Y) o tasa de interés (i)</b>. Después seleccioná un instrumento fiscal o monetario, analizá los cuatro mercados y conciliá IS, LM y BP. Las cuatro situaciones son puntos ilustrativos que permiten practicar intervenciones; no constituyen un conjunto exhaustivo ni soluciones únicas.</p></div>
+      <div class="policy-overview"><div><b>1 · Ubicación</b><span>Identificar los excesos frente a IS, LM y BP.</span></div><div><b>2 · Objetivo</b><span>Definir si Y o i debe aumentar o disminuir.</span></div><div><b>3 · Intervención</b><span>Elegir G o Ms y recorrer los efectos.</span></div><div><b>4 · Evaluación</b><span>Verificar nuevos desplazamientos y equilibrios.</span></div></div>
+      <div class="policy-layout"><div class="policy-graph"><svg class="policy-svg" viewBox="0 0 760 420" role="img" aria-label="Plano IS LM BP ilustrativo: seleccioná una de las cuatro situaciones o tocá cualquier punto" data-diag-plot="1"><line x1="${X(0)}" y1="${Y(0)}" x2="${X(105)}" y2="${Y(0)}" stroke="#30485b" stroke-width="2.5"/><line x1="${X(0)}" y1="${Y(0)}" x2="${X(0)}" y2="${Y(105)}" stroke="#30485b" stroke-width="2.5"/>${line(10,policySlopes.is(10),100,policySlopes.is(100),'#1879b9')}${line(10,policySlopes.lm(10),100,policySlopes.lm(100),'#c93e85')}${line(10,policySlopes.bp(10),100,policySlopes.bp(100),'#0b8d76')}<text x="${X(100)}" y="${Y(policySlopes.is(100))-10}" class="policy-curve" fill="#1879b9">IS</text><text x="${X(102)}" y="${Y(policySlopes.lm(102))-10}" class="policy-curve" fill="#c93e85">LM</text><text x="${X(89)}" y="${Y(policySlopes.bp(89))-12}" class="policy-curve" fill="#0b8d76">BP</text><text x="${X(108)}" y="${Y(0)+20}" fill="#415e73" text-anchor="end" font-size="15">Y · Producción</text><text x="${X(0)}" y="${Y(107)}" font-size="15" fill="#415e73">i · Tasa de interés</text><circle cx="${X(56)}" cy="${Y(48)}" r="4" fill="#233b50"/><text x="${X(56)+12}" y="${Y(48)-9}" fill="#233b50" font-size="15">E</text>${pins}<circle cx="${X(p.Y)}" cy="${Y(p.i)}" r="18" fill="none" stroke="#efaa23" stroke-width="2.8" stroke-dasharray="5 3" pointer-events="none"/></svg><p class="policy-chart-note">IS y LM delimitan cuatro combinaciones básicas de desequilibrio en bienes y dinero; BP subdivide la interpretación del sector externo. <b>No son los cuatro únicos estados posibles de la economía.</b> Las posiciones no corresponden a datos observados.</p></div>
+      <div class="policy-reading"><div class="policy-preset-grid">${scenarios}</div><div class="policy-diagnostics"><h4>Situación seleccionada</h4><dl><dt>Bienes y servicios</dt><dd>${esc(d.goods)}</dd><dt>Mercado monetario</dt><dd>${esc(d.money)}</dd><dt>Mercado cambiario</dt><dd>${esc(d.dollars)}</dd></dl></div><div class="policy-recommendation"><strong>${d.sample?esc(d.sample.measure):'Intervención por determinar'}</strong><p>${advice}</p>${d.sample?`<p>${esc(d.sample.body)}</p>`:''}</div>${d.sample?`<button type="button" class="button primary policy-apply" data-act="diag-apply" data-id="${d.sample.id}">Simular ${esc(d.sample.measure)}</button>`:''}<small class="policy-note">Una medida cambia los desplazamientos de IS, LM o BP según la variable afectada. La nueva intersección IS–LM debe compararse con el estado inicial, sin prometer equilibrio externo automático. Si aplicás un escenario, la conciliación aparece en el modelo final.</small></div></div></section>`;
   }
   function routeGraph(c,r){
     const all=r.sequence.filter(e=>c.showSecond||e.round!=='segundo');
@@ -1295,17 +1498,17 @@ MS.analyze=analyze;
     const tags=`<div class="causal-legend"><span><i class="legend-first"></i> Primer orden</span><span><i class="legend-second"></i> Segundo orden</span><span>Seleccioná un nodo para revisar su causa y sus conexiones</span></div>`;
     return `<section class="causal-panel"><div class="causal-title"><div><div class="market-eyebrow">MAPA DE CAUSALIDAD</div><h3>Diagrama de mercados y secuencias</h3><p>La misma ruta alimenta el gráfico, la redacción y las flechas. Cada número se traza hasta sus causas.</p></div><span class="causal-cases-label">${r.routeMode==='dual'?'DOS INICIOS':'RUTA SELECCIONADA'}</span></div><div class="causal-map">${svg}</div>${tags}<p class="causal-detail" aria-live="polite">Seleccioná cualquier nodo del diagrama para ver su antecedente económico.</p></section>`;
   }
-  function graphCard(m,c,r){const macroEq={goods:'DA = C + I + G + X − M · OA = Y',labor:'OL = f(migración, educación, PEA) · DL = f(Y, tecnología)',money:'Ms = f(instrumentos del BCCR) · Md = f(Y, transacciones, deuda interna)',fx:'O$ = f(ingreso de divisas) · D$ = f(salida de divisas)'};return `<article class="market-card" data-market="${m}"><div class="market-head"><div><div class="market-eyebrow">MERCADO</div><h3>${TITLES[m]} <small>(${CODES[m]})</small></h3></div><div class="market-numbers">${stepDots(c,r,m)}</div></div><p class="market-formula">${esc(macroEq[m])}</p><div class="chart-zone">${diagram(m,c,r)}</div>${explanations(c,r,m)}</article>`}
+  function graphCard(m,c,r){const macroEq={goods:'Demanda agregada: DA = C + I + G + X − M · Equilibrio: OA = DA',labor:'OL = f(migración, educación, PEA) · DL = f(Y, tecnología)',money:'Ms = f(instrumentos del BCCR) · Md = f(Y, transacciones, deuda interna)',fx:'O$ = f(ingreso de divisas) · D$ = f(salida de divisas)'};return `<article class="market-card" data-market="${m}"><div class="market-head"><div><div class="market-eyebrow">MERCADO</div><h3>${TITLES[m]} <small>(${CODES[m]})</small></h3></div><div class="market-numbers">${stepDots(c,r,m)}</div></div><p class="market-formula">${esc(macroEq[m])}</p><div class="chart-zone">${diagram(m,c,r)}</div>${explanations(c,r,m)}</article>`}
   function isCard(c,r){
     const z=r.islm||{is:0,lm:0};
     const ps=islmExplanation(c,r);
-    return `<article class="market-card combined-card" data-market="is"><div class="market-head"><div><div class="market-eyebrow">EQUILIBRIO SIMULTÁNEO</div><h3>Modelo IS–LM–BP <small>(i, Y)</small></h3></div><div class="market-numbers"><span class="stage-none">${z.is?'IS1 → IS2':'IS1 fija'} · ${z.lm?'LM1 → LM2':'LM1 fija'} · ${z.bp?'BP1 → BP2':'BP1 fija'}</span></div></div><div class="chart-zone">${modelISLM(c,r)}</div>${c.showExplanation?`<div class="narrative"><div class="narrative-header"><strong>INTERPRETACIÓN DEL MODELO IS–LM–BP</strong><span class="origin-tag">4 párrafos</span></div><div class="paragraphs">${ps.map((v,i)=>`<div class="paragraph"><span class="para-n">${i+1}</span><p>${markVars(c.overrides?.['is:0:'+i]??v,r)}</p></div>`).join('')}</div></div>`:''}</article>`;
+    return `<article class="market-card combined-card" data-market="is"><div class="market-head"><div><div class="market-eyebrow">EQUILIBRIO SIMULTÁNEO</div><h3>Modelo IS–LM–BP <small>(i, Y)</small></h3></div><div class="market-numbers"><span class="stage-none">${z.is?'IS1 → IS2':'IS1 fija'} · ${z.lm?'LM1 → LM2':'LM1 fija'} · ${z.bp?'BP1 → BP2':'BP1 fija'}</span></div></div><div class="chart-zone">${modelISLM(c,r)}</div>${c.showExplanation?`<div class="narrative"><div class="narrative-header"><strong>INTERPRETACIÓN DEL MODELO IS–LM–BP</strong><span class="origin-tag">4 párrafos</span></div><div class="paragraphs">${ps.map((v,i)=>`<div class="paragraph"><span class="para-n">${i+1}</span><p>${markVars(c.overrides?.['is:0:'+i]??v,r)}</p></div>`).join('')}</div></div>`:''}${policyTransition(c,r)}</article>`;
   }
   function caseSheet(c,expose){let r=analyze(c);const stages=r.sequence||[];
     return `<section class="paper ${expose?'paper-present':''}"><div class="paper-header"><div><div class="paper-overline">ANÁLISIS DEL ESCENARIO</div><h2>${esc(c.title)}</h2><p>Variable explicativa: <strong>${esc(shock(c).label)}</strong> · ${c.shockId==='tecnologia_sust'?'desplaza trabajadores → DL ↓':QDIR(c.direction)+' '+sign(c.direction)} · Origen: ${esc(MS.MARKETS[shock(c).market])}</p></div><div class="result-pills">${pill('Y '+sign(r.dominant.output),'blue')}${pill('Empleo '+sign(r.dominant.employment),'teal')}${pill('Salarios '+sign(r.dominant.wage),'pink')}${pill('i '+sign(r.dominant.interest),'amber')}</div></div>
       ${(c.showSecond&&r.balance?.applicable)?`<div class="balance-declaration"><strong>Alternativa seleccionada · segundo orden ${r.balance.stage}:</strong> ${c.shockId==='ied'&&c.routeMode==='dual'?`El modelo supone que predomina ${c.dualChoice==='investment'?'la caída de inversión nacional':'el canal de tipo de cambio'}`:`Predomina ${r.balance.choice==='investment'?'la inversión (I)':r.balance.choice==='exchange'?'el efecto cambiario (X − M)':'el consumo (C)'}`}; DA ${sign(r.balance.net)}.</div>`:''}
       ${formulas(c,r)}
-      ${c.showPolicyMap?policyMap(c):''}
+      ${c.showPolicyMap?policyMap(c,r):''}
       ${routeGraph(c,r)}
       <div class="sequence-band"><div class="sequence-title">RUTA CAUSAL · RESUMEN TEXTUAL</div><div class="sequence-steps">${stages.filter(e=>c.showSecond||e.round!=='segundo').map(e=>`<span class="sequence-event ${e.round==='segundo'?'second':''}"><b>${e.stage}</b> ${esc(TITLES[e.market])}: ${esc(SERIES[e.curve])}${sign(e.sign)}</span>`).join('')}</div></div>
       <div class="chart-grid">${CHARTS.map(m=>graphCard(m,c,r)).join('')}${c.showIS?isCard(c,r):''}</div>
@@ -1315,7 +1518,7 @@ MS.analyze=analyze;
   function bankView(){return `<div class="dialog-back"><div class="dialog large"><div class="dialog-head"><div><div class="eyebrow">BANCO DE CASOS</div><h2>Preguntas documentadas del profesor</h2><p>Seleccioná una pregunta para añadirla a la presentación activa. Los casos se añaden a la presentación actual.</p></div>${btn('✕','close-bank','icon')}</div><div class="bank-list">${BANK.map((b,i)=>`<div class="bank-row"><div class="bank-number">${String(i+1).padStart(2,'0')}</div><div><strong>${esc(b[0])}</strong><small>${esc(b[3])}</small></div>${btn('Añadir caso','insert-bank','outline small',`data-index="${i}"`)}</div>`).join('')}</div></div></div>`}
   function customShockDialog(){const pairs={goods:[['da','Demanda agregada (DA)']],labor:[['ol','Oferta laboral (OL)'],['dl','Demanda laboral (DL)']],money:[['ms','Oferta monetaria (Ms)'],['md','Demanda monetaria (Md)']],fx:[['os','Oferta de dólares (O$)'],['ds','Demanda de dólares (D$)']]};return `<div class="dialog-back"><div class="dialog"><div class="dialog-head"><div><div class="eyebrow">EDITOR DEL MOTOR</div><h2>Agregar variable explicativa</h2><p>Definí el efecto inicial de la variable para generar un nuevo caso.</p></div>${btn('✕','close-help','icon')}</div><form id="custom-shock-form" class="custom-form"><label>Nombre de la variable<input name="label" required placeholder="Ej. Cambios en ingreso extranjero"/></label><label>Mercado directamente afectado<select name="market" id="custom-market">${Object.entries(MS.MARKETS).map(([k,v])=>`<option value="${k}">${esc(v)}</option>`).join('')}</select></label><label>Curva afectada<select name="curve" id="custom-curve">${pairs.goods.map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select></label><label>Si aumenta la variable, la curva<select name="effect"><option value="1">Se desplaza a la derecha / aumenta</option><option value="-1">Se desplaza a la izquierda / disminuye</option></select></label><label>Canal o ecuación<input name="channel" required placeholder="Ej. Impuestos → ingreso disponible → consumo"/></label><label>Descripción / supuesto<textarea name="description" rows="3" placeholder="Restricciones, ceteris paribus, contexto"></textarea></label><div class="dialog-footer">${btn('Cancelar','close-help','outline')}<button class="button primary" type="submit">Guardar y utilizar</button></div></form></div></div>`}
   function paragraphEditor(){let c=selected(),r=analyze(c);return `<div class="dialog-back"><div class="dialog editor-dialog"><div class="dialog-head"><div><div class="eyebrow">PERSONALIZAR REDACCIÓN</div><h2>Explicaciones del caso</h2><p>Se muestra el texto completo original cuando está disponible. Los cambios se conservan exclusivamente en este caso.</p></div>${btn('✕','close-help','icon')}</div><div class="text-editor-scroll">${CHARTS.map(m=>{let arr=paragraphsFor(c,r,m);return `<div class="edit-block"><h3>${esc(TITLES[m])}</h3>${arr.map((x,i)=>`<h4>${x.event.round==='segundo'?'Segundo':'Primer'} orden — secuencia ${x.event.stage}</h4>${x.paragraphs.map((v,j)=>`<label class="edit-label">Párrafo ${j+1}<textarea data-edit="${m}:${r.changes[m].indexOf(x.event)}:${j}">${esc(v)}</textarea></label>`).join('')}`).join('')}</div>`}).join('')}<div class="edit-block"><h3>Modelo IS–LM–BP</h3><label class="edit-label">Interpretación<textarea data-edit="is:0:0">${esc(c.overrides?.['is:0:0']??refSection(c,'is')?.[0]??r.explanations.is)}</textarea></label></div></div><div class="dialog-footer">${btn('Cerrar','close-help','primary')}</div></div></div>`}
-  function screen(){root.innerHTML=mode==='present'?exposure(false):mode==='expo-all'?exposure(true):editor();if(help==='bank')root.insertAdjacentHTML('beforeend',bankView());else if(help==='paragraphs')root.insertAdjacentHTML('beforeend',paragraphEditor());else if(help==='custom')root.insertAdjacentHTML('beforeend',customShockDialog());}
+  function screen(){const libraryBefore=root.querySelector('.formula-library');if(libraryBefore)formulaLibraryOpened=libraryBefore.open;root.innerHTML=mode==='present'?exposure(false):mode==='expo-all'?exposure(true):editor();if(help==='bank')root.insertAdjacentHTML('beforeend',bankView());else if(help==='paragraphs')root.insertAdjacentHTML('beforeend',paragraphEditor());else if(help==='custom')root.insertAdjacentHTML('beforeend',customShockDialog());}
   function update(fn){fn();save();screen()}
   function exportFile(name,content,mime){let b=new Blob([content],{type:mime}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500)}
   const filename=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9_-]+/gi,'_').slice(0,55)||'Macro_Studio';
@@ -1326,7 +1529,7 @@ MS.analyze=analyze;
     if(action==='close-bank'||action==='close-help'){help=false;screen();return}
     if(action==='bank'){help='bank';screen();return}
     if(action==='diag-sample'){const p=policySamples.find(z=>z.id===button.dataset.id);if(p){diagnosticPoint={Y:p.Y,i:p.i};screen();}return}
-    if(action==='diag-apply'){const target=policySamples.find(z=>z.id===button.dataset.id);if(!target)return;update(()=>{c.shockId=target.policy;c.direction=target.dir;c.title='Diagnóstico '+target.id+' · '+target.title;c.overrides={};c.showPolicyMap=true;c.showIS=true;c.showSecond=true;});toast('Política aplicada: revisá los cuatro mercados y el modelo IS–LM–BP.');return}
+    if(action==='diag-apply'){const target=policySamples.find(z=>z.id===button.dataset.id);if(!target)return;update(()=>{c.shockId=target.policy;c.direction=target.dir;c.diagnosticPreset=target.id;c.title=target.measure+' · '+target.title;c.overrides={};c.showPolicyMap=true;c.showIS=true;c.showSecond=true;});toast('Escenario aplicado: revisá los cuatro mercados y la conciliación IS–LM–BP.');return}
     if(action==='edit-paragraphs'){help='paragraphs';screen();return}
     if(action==='custom-shock'){help='custom';screen();return}
     if(action==='insert-bank'){let q=BANK[Number(button.dataset.index)];update(()=>{let x=mkcase(q[0],q[1],q[2]);p.cases.push(x);state.activeCase=x.id;mode='editor';help=false});return}
@@ -1395,11 +1598,11 @@ MS.analyze=analyze;
   document.addEventListener('input',e=>{const id=e.target.id,c=selected();if(id==='title-input'){c.title=e.target.value;save();let h1=document.querySelector('.case-heading h1');if(h1)h1.textContent=c.title;let h2=document.querySelector('.paper-header h2');if(h2)h2.textContent=c.title}
     if(e.target.dataset.edit){c.overrides[e.target.dataset.edit]=e.target.value;save();}
   });
-  document.addEventListener('change',e=>{if(e.target.classList.contains('zone-select')){const states={'ro-rm':'Exceso de Oferta Agregada (OA mayor que DA) y exceso de Demanda de Dinero (Md mayor que Ms).','ro-lm':'Exceso de Oferta Agregada (OA mayor que DA) y exceso de Oferta de Dinero (Ms mayor que Md).','lo-rm':'Exceso de Demanda Agregada (DA mayor que OA) y exceso de Demanda de Dinero (Md mayor que Ms).','lo-lm':'Exceso de Demanda Agregada (DA mayor que OA) y exceso de Oferta de Dinero (Ms mayor que Md).'};e.target.closest('.region-explorer').querySelector('.zone-reading').textContent=states[e.target.value];return;}if(e.target.id==='custom-market'){let opts={goods:[['da','Demanda agregada (DA)']],labor:[['ol','Oferta laboral (OL)'],['dl','Demanda laboral (DL)']],money:[['ms','Oferta monetaria (Ms)'],['md','Demanda monetaria (Md)']],fx:[['os','Oferta de dólares (O$)'],['ds','Demanda de dólares (D$)']]};document.querySelector('#custom-curve').innerHTML=opts[e.target.value].map(([a,b])=>`<option value="${a}">${b}</option>`).join('');return}let c=selected(),id=e.target.id;if(id==='shock-input')update(()=>{c.shockId=e.target.value;if(c.shockId==='tecnologia_sust')c.direction=1;c.title=titleForCase(c);c.overrides={};if(shock(c).market==='fx')c.showFX=true;});
+  document.addEventListener('change',e=>{if(e.target.classList.contains('zone-select')){const states={'ro-rm':'Exceso de Oferta Agregada (OA mayor que DA) y exceso de Demanda de Dinero (Md mayor que Ms).','ro-lm':'Exceso de Oferta Agregada (OA mayor que DA) y exceso de Oferta de Dinero (Ms mayor que Md).','lo-rm':'Exceso de Demanda Agregada (DA mayor que OA) y exceso de Demanda de Dinero (Md mayor que Ms).','lo-lm':'Exceso de Demanda Agregada (DA mayor que OA) y exceso de Oferta de Dinero (Ms mayor que Md).'};e.target.closest('.region-explorer').querySelector('.zone-reading').textContent=states[e.target.value];return;}if(e.target.id==='custom-market'){let opts={goods:[['da','Demanda agregada (DA)']],labor:[['ol','Oferta laboral (OL)'],['dl','Demanda laboral (DL)']],money:[['ms','Oferta monetaria (Ms)'],['md','Demanda monetaria (Md)']],fx:[['os','Oferta de dólares (O$)'],['ds','Demanda de dólares (D$)']]};document.querySelector('#custom-curve').innerHTML=opts[e.target.value].map(([a,b])=>`<option value="${a}">${b}</option>`).join('');return}let c=selected(),id=e.target.id;if(id==='formula-stage-input'){formulaStageSelection=e.target.value;screen();return;}if(id==='shock-input')update(()=>{delete c.diagnosticPreset;c.shockId=e.target.value;if(c.shockId==='tecnologia_sust')c.direction=1;c.title=titleForCase(c);c.overrides={};if(shock(c).market==='fx')c.showFX=true;});
     else if(id==='route-input')update(()=>{c.routeMode=e.target.value;c.overrides={}});
     else if(id==='dual-input')update(()=>{c.dualChoice=e.target.value;c.overrides={}});
     else if(id==='trade-input')update(()=>{c.tradeChoice=e.target.value;c.overrides={}});
-    else if(id==='direction-input')update(()=>{c.direction=c.shockId==='tecnologia_sust'?1:Number(e.target.value);c.title=titleForCase(c);c.overrides={}});
+    else if(id==='direction-input')update(()=>{delete c.diagnosticPreset;c.direction=c.shockId==='tecnologia_sust'?1:Number(e.target.value);c.title=titleForCase(c);c.overrides={}});
     else if(id==='second-input')update(()=>c.showSecond=e.target.checked);
     else if(id==='is-input')update(()=>c.showIS=e.target.checked);
     else if(id==='policy-input')update(()=>c.showPolicyMap=e.target.checked);

@@ -165,3 +165,79 @@
 @media print{.formula-library:not([open]){display:none}.policy-panel{break-inside:avoid;page-break-inside:avoid}.policy-layout{grid-template-columns:1fr 1fr}}
 
 .market-formula{margin:0 17px 5px;padding:9px 13px;border:1px solid #e0eaf2;background:#f6fbfe;border-radius:8px;color:#446982;font-size:11.5px;line-height:1.55;font-weight:750}
+
+/* Formulario económico desarrollado y trazabilidad de variables · revisión local 5.2 */
+.formula-library{margin:15px 0 22px}.formula-library summary{font-size:14px;line-height:1.5}
+.formula-intro{font-size:12px;margin:16px 19px}.formula-controls{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;padding:8px 18px 3px}
+.formula-step-label{display:flex;align-items:center;gap:10px;color:#304f69;font-weight:800;font-size:12px;flex-wrap:wrap}
+.formula-step-label select{min-width:180px;padding:8px 11px;border:1px solid #b9d0e1;background:#fff;color:#193f59;border-radius:9px;font-size:12px}
+.formula-pill{display:inline-flex;align-items:center;gap:7px;color:#58758b;font-size:11px;font-weight:800}
+.formula-pill .dot{width:11px;height:11px;border-radius:4px;border:1px solid #1879b9;background:#dff1ff;display:inline-block}
+.formula-pill .dot.second{background:#f9e4ee;border-color:#c93e85}
+.formula-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:15px}
+.formula-block{padding:16px 16px 18px}.formula-block h4{font-size:15px;margin:0 0 11px;padding-bottom:10px;border-bottom:1px solid #e4eaf0}
+.formula-block h4 span{font-size:12px;font-weight:500;color:#688296}
+.formula-row{padding:10px 0;border-bottom:1px solid #edf1f5}.formula-row:last-child{border:0}
+.formula-row-title{font-size:11px;letter-spacing:.025em;color:#506c83;font-weight:900;text-transform:uppercase;margin-bottom:5px}
+.formula-equation{font-weight:850;font-size:13px;line-height:1.7;color:#213d51;overflow-wrap:anywhere}
+.formula-equation small{font-weight:650;color:#805f5b;font-size:10px}
+.formula-row p{margin:6px 0 0;color:#4b6578;font-size:11.5px;line-height:1.6}
+.formula-term{font-weight:880;white-space:normal}.formula-term.formula-hit{padding:2px 4px;border-radius:5px;background:#e5f3fb;color:#126da6;border:1px solid #acd6ee}
+.formula-term.formula-hit.second{background:#fbe6f1;color:#ab2f72;border:1px solid #eab9d4}
+.formula-nested{margin:10px 0 2px;padding:9px 10px;border-left:3px solid #167ab5;border-radius:7px;background:#f5f9fd}
+.formula-nested summary{padding:0!important;border:0!important;list-style:auto;font-size:11.5px!important;color:#245c82!important;background:transparent!important;font-weight:850}
+.formula-nested-content{padding:10px 0 1px;font-size:12px;line-height:1.65}
+.formula-combined{grid-column:1/-1;background:#fbfdff}
+.formula-in-narrative{margin:11px 16px 0;padding:10px 12px;background:#f5f9fc;border:1px solid #dbe7f0;border-radius:9px;color:#38586f;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+.formula-in-narrative>b{color:#1b638d;display:block;font-size:10px;letter-spacing:.055em;margin-bottom:4px}
+.narrative-second .formula-in-narrative{background:#fff7fb;border-color:#f0d5e6}
+.narrative-second .formula-in-narrative>b{color:#b33778}
+.formula-affect{color:#0d699c;font-weight:950;background:#e7f2fa;padding:1px 2px;border-radius:3px}
+.narrative-second .formula-affect{color:#a82d70;background:#fce6f1}
+@media(max-width:1050px){.formula-grid{grid-template-columns:1fr}.formula-combined{grid-column:auto}}
+@media print{.formula-library:not([open]){display:none}.formula-nested{break-inside:avoid}.formula-combined{grid-column:auto}}
+
+/* Revisión de jerarquía visual: la explicación conserva sus cuatro pasos y
+   el formulario económico vive como material de consulta, no como paso 0. */
+.formula-in-narrative{margin:17px 0 0;border:1px solid #dde7f0;border-radius:10px;background:#fafcff;color:#3d5b6e;padding:0;overflow:hidden;font-size:12px}
+.formula-in-narrative summary{cursor:pointer;font-size:11.3px;font-weight:790;color:#30637f;padding:11px 14px;display:flex;gap:7px;align-items:center;list-style-position:inside}
+.formula-in-narrative[open] summary{border-bottom:1px solid #e2ebf2;background:#f3f8fc}
+.formula-inline-body{padding:13px 15px 6px;line-height:1.75;overflow-wrap:anywhere}
+.formula-in-narrative small{display:block;font-size:10.5px;line-height:1.55;color:#7890a1;padding:0 15px 12px}
+.narrative-second .formula-in-narrative{background:#fffafd;border-color:#f2ddea}
+.narrative-second .formula-in-narrative[open] summary{background:#fff0f7;border-bottom-color:#f2ddea}
+.formula-library{background:#fff;border-color:#d7e4ed;box-shadow:0 4px 17px rgba(40,75,99,.035);margin:18px 0 25px}
+.formula-library>summary{background:#f0f6fb;color:#24445e;padding:17px 21px;font-size:14px}
+.formula-block h4{border-bottom:1px solid #e4edf4;padding-bottom:10px}
+.formula-row{padding-block:12px}
+.formula-equation{line-height:1.75;overflow-wrap:anywhere}
+.formula-grid{row-gap:17px}
+.policy-overview{margin:16px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.policy-overview>div{padding:11px 12px;background:#fff;border:1px solid #d8e6ef;border-radius:10px;min-width:0}
+.policy-overview b{display:block;color:#205c85;font-size:11px;margin-bottom:4px}
+.policy-overview span{display:block;font-size:11px;line-height:1.5;color:#546e82}
+.policy-preset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:15px}
+.policy-preset{display:flex;align-items:flex-start;gap:9px;text-align:left;padding:10px;border:1px solid #d3e1ec;background:#fbfdff;color:#274b65;border-radius:9px;cursor:pointer;font-family:inherit;min-width:0}
+.policy-preset.active{background:#edf6fd;border-color:#1682bd;box-shadow:inset 0 0 0 1px #1682bd}
+.policy-preset>b{display:grid;place-items:center;width:26px;height:26px;flex:none;border-radius:9px;background:#e5f3fb;color:#126ca0}
+.policy-preset span{font-weight:850;font-size:11px;line-height:1.3}
+.policy-preset span small{font-weight:500;display:block;margin-top:5px;font-size:10px;line-height:1.35;color:#687f92}
+.policy-diagnostics{border-top:1px solid #e4edf3;padding-top:11px}
+.policy-diagnostics dl{display:grid;gap:9px;margin:11px 0}
+.policy-diagnostics dt{font-weight:850;font-size:10px;letter-spacing:.04em;color:#4f7894}
+.policy-diagnostics dd{font-size:12px;margin:3px 0 0;color:#233c52;line-height:1.35}
+.policy-status{display:inline-block;font-size:10px;border-radius:7px;padding:5px 8px;color:#22724a;background:#e9f7ee;font-weight:750}
+.policy-status.hypothesis{color:#915b1b;background:#fff3db}
+.policy-apply{width:100%;margin-top:7px}
+.policy-outcome{padding:17px 18px;margin:16px 15px 18px;border-radius:11px;background:#f7fbfe;border:1px solid #d6e6f1;color:#36566e}
+.policy-outcome-kicker{font-size:10px;color:#35749b;font-weight:900;letter-spacing:.075em}
+.policy-outcome h4{font-size:15px;margin:5px 0 8px;color:#21435d}
+.policy-outcome p{font-size:12px;line-height:1.7;margin:7px 0}
+.policy-outcome small{font-size:10px;line-height:1.5;color:#6a8398}
+.policy-outcome-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:13px 0}
+.policy-outcome-grid>div{background:white;border:1px solid #dbe8f1;border-radius:8px;padding:10px}
+.policy-outcome-grid span{font-size:10px;color:#607d91;display:block;line-height:1.45}
+.policy-outcome-grid b{font-size:12px;color:#1f577b;display:block;margin-top:5px}
+@media(max-width:1000px){.policy-overview{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:610px){.policy-overview,.policy-preset-grid,.policy-outcome-grid{grid-template-columns:1fr}.policy-heading h3{font-size:17px}}
+@media print{.formula-in-narrative:not([open]){display:none!important}.policy-overview{grid-template-columns:repeat(4,1fr)}.policy-preset-grid{grid-template-columns:repeat(2,1fr)}}
