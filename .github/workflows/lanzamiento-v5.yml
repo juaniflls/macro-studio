@@ -1,0 +1,55 @@
+name: Publicar Macro Studio 5.0
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/lanzamiento-v5.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verificar-y-publicar:
+    name: Verificar y publicar v5.0.0
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar herramientas de prueba
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python -m playwright install --with-deps chromium
+      - name: Comprobar motor e interfaz
+        run: python tests/test_app.py
+      - name: Preparar la aplicación descargable
+        run: |
+          cp index.html Macro_Studio_5_0.html
+      - name: Publicar la versión oficial
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view v5.0.0 >/dev/null 2>&1; then
+            echo 'La versión v5.0.0 ya existe; no se modifica.'
+          else
+            gh release create v5.0.0 \
+              Macro_Studio_5_0.html \
+              Macro_Studio_5_0_Final_Notebook_Generador.ipynb \
+              --title 'Macro Studio 5.0 · Primer lanzamiento público' \
+              --notes-file docs/NOTAS_VERSION_5_0.md \
+              --target "$GITHUB_SHA" \
+              --latest
+          fi
+      - name: Guardar diagnósticos si las pruebas fallan
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnosticos-publicacion-5-0
+          path: tests/out/
+          if-no-files-found: ignore
