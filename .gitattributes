@@ -1,0 +1,6 @@
+# Los HTML autocontenidos son artefactos generados desde el notebook.
+# Esto corrige su ponderación en GitHub Linguist sin alterar el código ni su ejecución.
+index.html linguist-generated=true
+Macro_Studio_5_0.html linguist-generated=true
+# Las imágenes son recursos documentales, no código fuente.
+assets/** linguist-vendored
