@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Si utilizás Macro Studio como referencia académica, citá este software."
+title: "Macro Studio: simulador cualitativo de transmisión macroeconómica"
+type: software
+authors:
+  - family-names: "Garbanzo Fallas"
+    given-names: "Juan Ignacio"
+version: "5.0"
+date-released: "2026-11-24"
+url: "https://github.com/juaniflls/macro-studio"
+keywords:
+  - macroeconomía
+  - simulación económica
+  - IS-LM-BP
+  - diagramas causales
+  - educación económica
+  - Jupyter
