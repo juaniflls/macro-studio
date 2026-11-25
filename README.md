@@ -105,7 +105,7 @@ Un cambio de i por sí solo no desplaza IS: la variación inducida de I represen
 
 El archivo principal es **[Macro_Studio_5_3_Notebook_Generador.ipynb](./Macro_Studio_5_3_Notebook_Generador.ipynb)**. Incluye reglas, referencias, estilos e interfaz. Su ejecución completa produce exactamente **index.html**, el archivo usado por GitHub Pages.
 
-**¿Cuál notebook utilizar?** Utilizá exclusivamente **`Macro_Studio_5_3_Notebook_Generador.ipynb`** para editar, regenerar y publicar. El archivo `Macro_Studio_5_3_Revision_Academica_Local.ipynb` es un **respaldo de revisión**, conservado para comparar decisiones anteriores; **no** es la fuente que emplea la automatización de GitHub. Ambos conservan el mismo código de los modelos 5.3, pero difieren en títulos y metadatos de publicación.
+**Fuente única de desarrollo:** `Macro_Studio_5_3_Notebook_Generador.ipynb`. Es el único notebook activo del repositorio. Las revisiones históricas pueden recuperarse desde el historial de Git; no son archivos de trabajo de la rama principal.
 
 ~~~bash
 python -m pip install jupyterlab

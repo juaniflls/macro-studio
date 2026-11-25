@@ -8,6 +8,12 @@ report_dir.mkdir(parents=True,exist_ok=True)
 errors=[];checks={};examples={};count=0
 # Evita publicar HTML con marcadores de conflictos Git no resueltos.
 checks['no_unresolved_merge_conflicts']=not any(marker in html for marker in ('<<<<<<<', '=======', '>>>>>>>'))
+# Integridad del repositorio: un solo generador, galería sin duplicados y fuentes rastreables.
+checks['single_official_notebook']=[p.name for p in root.glob('*.ipynb')]==['Macro_Studio_5_3_Notebook_Generador.ipynb']
+gallery_references=re.findall(r'assets/screenshots/actuales/([a-z0-9-]+\.png)', (root/'README.md').read_text(encoding='utf-8'))
+checks['gallery_eight_unique_images']=len(gallery_references)==8 and len(set(gallery_references))==8 and all((root/'assets'/'screenshots'/'actuales'/name).is_file() for name in gallery_references)
+checks['active_release_workflows_only']=not (root/'.github'/'workflows'/'lanzamiento-v5.yml').exists()
+checks['no_old_root_screenshots']=not any((root/'assets'/'screenshots').glob('*.png'))
 expected={
  'ied':{'goods':[2,4],'labor':[3,5],'money':[3,5],'fx':[1,3]},
  'ied_dual':{'goods':[1,2],'labor':[2,3],'money':[2,3],'fx':[1,2]},
