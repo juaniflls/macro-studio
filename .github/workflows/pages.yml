@@ -56,3 +56,21 @@ jobs:
       - name: Desplegar Macro Studio
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Comprobar página publicada
+        run: |
+          URL="https://juaniflls.github.io/macro-studio/"
+          ok=0
+          for intento in $(seq 1 12); do
+            if curl --fail --silent --show-error --location --connect-timeout 10 --max-time 20 "$URL" -o /tmp/macro-studio-pagina.html; then
+              if grep -iq "macro studio" /tmp/macro-studio-pagina.html && grep -iq "<html" /tmp/macro-studio-pagina.html; then
+                ok=1
+                echo "Verificación pública correcta: HTTP 200 y contenido de Macro Studio."
+                break
+              fi
+              echo "La URL responde, pero el contenido todavía no coincide."
+            else
+              echo "Página todavía no disponible (intento $intento)."
+            fi
+            sleep 5
+          done
+          test "$ok" -eq 1
